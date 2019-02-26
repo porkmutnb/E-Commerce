@@ -105,8 +105,8 @@
 				</div>
 				<div class="row pt-md-5 pt-4">
 					<div class="col-md-12 mb-md-3 mb-3">
-						<a class="btn btn-orange w-100" data-toggle="modal" data-target="#myModal">
-							จัดส่ง
+						<a class="btn btn-orange w-100" href="payment.php">
+							ชำระเงิน
 						</a>
 					</div>
 					<div class="col-md-12">
@@ -178,28 +178,28 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal">
-	    <div class="modal-dialog">
-	      	<div class="modal-content">
-
-	        	<!-- Modal Header -->
-	        	<div class="modal-header relative border-none pt-md-4 pt-4 pb-md-4 pl-md-4 pr-md-4" align="center">
-	        		<b class="font-weight-bold text-title">กรอกที่อยู่จัดส่ง</b>
-	        		<div class="row mx-0">
-
-                        <div class="form-group w-100">
-                            <textarea type="text" class="form-control font-md-14" rows="5" placeholder="กรอกที่อยู่จัดส่ง" required></textarea>
-                        </div>
-	        			<div class="col-12 mt-md-2 mt-2 mb-md-2 mb-2">
-	        				<a href="profile.php" class="btn btn-orange w-100">ยืนยัน</a>
-	        			</div>
-
-	        		</div>
-	          		<button type="button" class="close absolute btn-close-modal" data-dismiss="modal"><i class="fas fa-times"></i></button>
-	        	</div>
-	      	</div>
-	    </div>
-	</div>
+<!--	<div class="modal fade" id="myModal">-->
+<!--	    <div class="modal-dialog">-->
+<!--	      	<div class="modal-content">-->
+<!---->
+<!--	        	<!-- Modal Header -->-->
+<!--	        	<div class="modal-header relative border-none pt-md-4 pt-4 pb-md-4 pl-md-4 pr-md-4" align="center">-->
+<!--	        		<b class="font-weight-bold text-title">กรอกที่อยู่จัดส่ง</b>-->
+<!--	        		<div class="row mx-0">-->
+<!---->
+<!--                        <div class="form-group w-100">-->
+<!--                            <textarea type="text" class="form-control font-md-14" rows="5" placeholder="กรอกที่อยู่จัดส่ง" required></textarea>-->
+<!--                        </div>-->
+<!--	        			<div class="col-12 mt-md-2 mt-2 mb-md-2 mb-2">-->
+<!--	        				<a href="profile.php" class="btn btn-orange w-100">ยืนยัน</a>-->
+<!--	        			</div>-->
+<!---->
+<!--	        		</div>-->
+<!--	          		<button type="button" class="close absolute btn-close-modal" data-dismiss="modal"><i class="fas fa-times"></i></button>-->
+<!--	        	</div>-->
+<!--	      	</div>-->
+<!--	    </div>-->
+<!--	</div>-->
 
 </div>
 

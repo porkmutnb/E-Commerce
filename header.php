@@ -30,9 +30,10 @@
 		<div class="headerMain" id="headerMain">
 			<div class="container font-white">
 				<div class="row mlr-sx-0">
-					<div class="col-md-6 col-sm-6 col-6 pl-0 pl-sm-2">
-						<a href="home.php">
-							<img src="public/image/logo-novembor-white.png" class="logo-banner">
+					<div class="col-md-6 col-sm-6 col-6 pl-0 pl-sm-2 pt-md-3 pt-3">
+						<a href="home.php" class="font-lg-24 font-16">
+<!--							<img src="public/image/logo-novembor-white.png" class="logo-banner">-->
+                            Fashion Shop
 						</a>
 					</div>
 					<div class="col-md-6 col-sm-6 col-6 plr-xs-0 plr-xs-0" align="right">

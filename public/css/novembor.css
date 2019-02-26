@@ -365,7 +365,21 @@
 	.bg-f0f0f0{
 		background-color: #f0f0f0;
 	}
+	.tbl-profile{
+		 width: 100%;
 
+	 }
+	.tbl-profile th{
+		padding: 10px;
+		background-color: #ccc;
+		border: 1px solid #ccc;
+		text-align: center;
+	}
+	.tbl-profile tr td{
+		padding: 10px;
+		border: 1px solid #ccc;
+		background-color: white;
+	}
 
 
 
