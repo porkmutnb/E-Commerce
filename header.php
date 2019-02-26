@@ -2,6 +2,10 @@
 	include('./controller/query_category.php'); 
 
 	session_start();
+
+	if(!empty($_SESSION['token'])) {
+		echo $_SESSION['token'];
+	}
 ?>
 <!DOCTYPE html>
 <html>
