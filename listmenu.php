@@ -75,7 +75,7 @@
 	</div>
 	<div class="row">
 		<div class="col pt-md-5 mb-lg-5 mb-sm-5 mb-5 pt-3 pb-md-1 pb-4 pl-5 pr-5" align="center">
-			<a href="requirelocation.php" class="btn btn-orange w-100" style="">รายการที่สั่งซื้อ</a>
+			<a href="myorder.php" class="btn btn-orange w-100" style="">รายการที่สั่งซื้อ</a>
 		</div>
 	</div>
 	<?php include('modalProduct.php') ?>
