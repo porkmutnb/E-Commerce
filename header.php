@@ -2,8 +2,10 @@
 	include('./controller/query_category.php'); 
 
 	session_start();
-
-	include('./controller/query_profile.php'); 
+	
+	if(!empty($_SESSION['token'])) {
+		include('./controller/query_profile.php'); 
+	}
 
 	// if(!empty($_SESSION['token'])) {
 	// 	echo $_SESSION['token'];

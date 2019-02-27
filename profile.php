@@ -98,7 +98,7 @@
                                         }
                                     }
                                 }else{
-                                    echo "<td colspan='5' align='center'>ไม่มีข้อมูล</td>";
+                                    echo "<td colspan='6' align='center'>ไม่มีข้อมูล</td>";
                                 }
                             ?>
                         </tr>
