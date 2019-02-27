@@ -55,5 +55,12 @@
 	    </div>
 	</div>
 
+	<script>
+		$('#my-modal').on('show.bs.modal', function (event) {
+		  	var myVal = $(event.relatedTarget).data('val');
+		  	console.log(myVal);
+		});
+	</script>
+
 
 

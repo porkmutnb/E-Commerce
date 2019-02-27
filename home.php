@@ -23,7 +23,7 @@
 			if (mysqli_num_rows($product) > 0) {
 				while($row = $product->fetch_assoc()) {
 					echo "<div class='col-md-4 col-sm-4 col-4 pr-md-2 pr-1 pl-md-3 pl-2 mb-2 mb-md-3'>";
-					echo "<div class='col block-product pl-0 pr-0 pointer' data-toggle='modal' data-target='#modalProduct'>";
+					echo "<div class='col block-product pl-0 pr-0 pointer' data-toggle='modal' data-val='".$row['productID']."' data-target='#modalProduct'>";
 					echo "<div class='label-nameproduct w-100 font-lg-26 font-md-22 font-12 pt-md-2 pt-lg-2 pt-2 font-sm-16 pl-md-4 pl-2'>";
 					echo $row['productName'];
 					echo "</div>";
