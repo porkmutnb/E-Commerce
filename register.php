@@ -1,4 +1,7 @@
-<?php include('header.php') ?>
+<?php 
+	include('header.php');
+	include('./controller/query_gender.php');
+?>
 
 <link rel="stylesheet" type="text/css" href="public/css/layout-register.css">
 
@@ -17,18 +20,19 @@
 			    	<label class="mb-sm-1 mb-0 font-md-14" for="exampleInputPassword1">เพศ</label>
 			    	<div class="col-sm-6 col-8">
 			    		<div class="row">
-			    			<div class="col">
-			    				<label class="label-radio font-lg-16">ชาย
-								  	<input type="radio" checked="checked" value="1" name="gender">
-								  	<span class="checkmark"></span>
-								</label>
-			    			</div>
-			    			<div class="col pl-0 pr-0">
-			    				<label class="label-radio pr-0 font-md-16">หญิง
-								  	<input type="radio" value="2" name="gender">
-								  	<span class="checkmark"></span>
-								</label>
-			    			</div>
+							<?php
+								if ($result->num_rows > 0) {
+									// output data of each row
+									while($row = $result->fetch_assoc()) {
+										echo	"<div class='col'>".
+												"<label class='label-radio font-lg-16'>".$row["genderName"].
+												"<input type='radio' value='".$row["genderID"]."' name='gender' required>".
+												"<span class='checkmark'></span>".
+												"</label>".
+												"</div>";
+									}
+								}
+							?>
 			    		</div>
 			    	</div>
 			  	</div>
@@ -36,13 +40,17 @@
 <!--			    	<label class="mb-sm-1 mb-0 font-md-14" for="exampleInputPassword1">วัน/เดือน/ปีเกิด</label>-->
 <!--			    	<input type="text" class="form-control font-md-14 datepicker" value="" id="age" data-provide="datepicker" name="age" placeholder="ระบุ วัน/เดือน/ปีเกิด" required>-->
 <!--			  	</div>-->
+				<div class="form-group mb-sm-2 mb-1">
+			    	<label class="mb-sm-1 mb-0 font-md-14" for="exampleInputPassword1">ชื่อผู้ใช้</label>
+			    	<input type="text" class="form-control font-md-14" name="username" id="username" maxlength="255" placeholder="กรอกชื่อผู้ใช้" required>
+			  	</div>
 			  	<div class="form-group mb-sm-2 mb-1">
 			    	<label class="mb-sm-1 mb-0 font-md-14" for="exampleInputPassword1">อีเมล์</label>
-			    	<input type="text" class="form-control font-md-14" name="email" id="email" placeholder="กรอกอีเมล์" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+			    	<input type="text" class="form-control font-md-14" name="email" id="email" maxlength="255" placeholder="กรอกอีเมล์" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
 			  	</div>
 			  	<div class="form-group mb-sm-2 mb-1">
 			    	<label class="mb-sm-1 mb-0 font-md-14" for="exampleInputPassword2">รหัสผ่าน</label>
-			    	<input type="password" class="form-control font-md-14" name="password" id="password" placeholder="กรอกรหัสผ่าน" required>
+			    	<input type="password" class="form-control font-md-14" name="password" id="password" maxlength="255" placeholder="กรอกรหัสผ่าน" required>
 			  	</div>
 			  	<div class="mt-lg-5 mt-5">
 <!--			  		<div class="form-check">-->

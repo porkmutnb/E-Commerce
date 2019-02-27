@@ -1,3 +1,8 @@
+<?php 
+	include('./controller/query_category.php'); 
+
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,11 +49,25 @@
 										หน้าหลัก
 									</a>
 								</div>
-								<div class="col">
-									<a href="login.php" class="font-white">
-										เข้าสู่ระบบ
-									</a>
-								</div>
+								<?php  
+									if(empty($_SESSION['token'])) {
+										?>
+											<div class="col">
+												<a href="login.php" class="font-white">
+													เข้าสู่ระบบ
+												</a>
+											</div>
+										<?php
+									}else{
+										?>
+											<div class="col">
+												<a href="logout.php" class="font-white">
+													ลงชื่อออก
+												</a>
+											</div>
+										<?php
+									}
+								?>
 							</div>
 						</div>
 					</div>
@@ -61,23 +80,25 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-5 col-7 block-top-menu font-lg-14 font-xs-12">
 							<div class="row" align="center">
-								<div class="col plr-md-0">
-									<a href="listmenu.php">
-                                        หญิง
-									</a>
-									<div class="line-top-menu">|</div>
-								</div>
-								<div class="col plr-md-0">
-									<a href="listmenu.php">
-                                        ชาย
-									</a>
-									<div class="line-top-menu">|</div>
-								</div>
-								<div class="col plr-md-0">
-									<a href="listmenu.php">
-										แฟชั่น
-									</a>
-								</div>
+								<?php
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											echo "<div class='col plr-md-0'>".
+												 "<a href='listmenu.php'>".
+												 $row['categoryName'].
+												 "</a>".
+												 "<div class='line-top-menu'>|</div>".
+												 "</div>";
+										}
+									}else{
+										echo 	"<div class='col plr-md-0'>".
+												"<a href='#'>".
+                                			    "ไม่มีข้อมูล".
+												"</a>".
+												"<div class='line-top-menu'>|</div>".
+												"</div>";
+									}
+								?>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">

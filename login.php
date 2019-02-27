@@ -9,22 +9,20 @@
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-lg-6 col-md-7 col-sm-9">
-			<form action="register.php" method="GET">
+			<form action="controller/login.php" method="POST">
 			  	<div class="form-group">
 			    	<label class="mb-sm-1 mb-0 font-md-14" for="exampleInputEmail1">อีเมล์</label>
-			    	<input type="email" class="form-control font-md-14" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="กรอกอีเมล์" required>
+			    	<input type="email" class="form-control font-md-14" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="กรอกอีเมล์" required>
 			  	</div>
 			  	<div class="form-group mb-sm-2 mb-1">
 			    	<label class="mb-sm-1 mb-0 font-md-14" for="exampleInputPassword1">รหัสผ่าน</label>
-			    	<input type="password" class="form-control font-md-14" id="exampleInputPassword1" placeholder="กรอกรหัสผ่าน">
+			    	<input type="password" class="form-control font-md-14" name="password" id="exampleInputPassword1" placeholder="กรอกรหัสผ่าน" required>
 			  	</div>
 <!--			  	<div class="" align="right">-->
 <!--			    	<a class="pointer font-md-14" data-toggle="modal" data-target="#myModal"><u>ลืมรหัสผ่าน?</u></a>-->
 <!--			  	</div>-->
 			  	<div>
-			  		<a href="home.php" class="btn btn-orange w-100 mt-md-4 mt-4 mb-md-2">
-			  			เข้าสู่ระบบ
-			  		</a>
+				  	<button class="btn btn-orange w-100 mt-md-4 mt-4 mb-md-2" type="submit" id="submit"> เข้าสู่ระบบ </button>
 			  	</div>
 			  	<div class="mt-md-5 mt-4 relative" align="center">
 			  		<div class="bg-white absolute absolute-center label-notRegister font-md-14 font-14">
