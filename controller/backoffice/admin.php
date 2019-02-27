@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     function RandomString()
     {
@@ -12,12 +12,12 @@
 
     include('connectDB.php');
 
-	$email = $_POST["email"];
+    $email = $_POST["email"];
     $password = md5($_POST["password"]);
     
     echo "Loading....<br>";
 
-    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."' AND 'status' = 'member'";
+    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."' AND 'status' = 'admin'";
 
     if ($res = mysqli_query($conn, $sql)) { 
 	    if (mysqli_num_rows($res) > 0) {
@@ -31,25 +31,16 @@
 
                 session_start();
                 $_SESSION["token"] = $token;
-                header('Location: ../home.php');
+                header('Location: ../../backoffice/datauser.php');
 
             } else {
                 echo "Error updating record: " . mysqli_error($conn);
             }
         }else{
             echo "No Matching records are found."; 
-            header('Location: ../login.php');
+            header('Location: ../../backoffice/admin.php');
         }
     } else {
         echo "ERROR: Could not able to execute $sql. ". mysqli_error($conn); 
-        header('Location: ../login.php');
+        header('Location: ../../backoffice/admin.php');
     }
-
-    mysqli_close($conn);
-
-    // if ($result->num_rows > 0) {
-    //     $row = $result->fetch_assoc();
-    //     echo $row[0]['username'];
-    // }else{
-    //     header('Location: ../login.php');
-    // }

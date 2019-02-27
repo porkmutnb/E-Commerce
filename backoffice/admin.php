@@ -1,3 +1,6 @@
+<?php
+	include('../controller/backoffice/query_admin.php'); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +24,8 @@
 				<div class="row">
 					<div class="col" align="center">
 						<a href="#">
-							<img src="../public/image/logo-novembor-white.png" class="logo-banner">
+							<!-- <img src="../public/image/logo-novembor-white.png" class="logo-banner"> -->
+							<h3 style="padding-top: 15px;"> E-commerce Backoffice </h3>
 						</a>
 					</div>
 				</div>
@@ -32,18 +36,18 @@
 			<div class="row mt-md-5">
 				<div class="col-6 offset-md-3 bg-white bg-shadow px-md-4 py-md-4">
 					<h3 align="center">เข้าสู่ระบบ</h3>
-					<form>
+					<form action="../controller/backoffice/admin.php" method="POST">
 						<div class="row px-md-4 pb-md-2">
 							<div class="col-12">
 			  					<div class="form-group">
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">อีเมล์</label>
-			    					<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control font-md-14" id="email" placeholder="กรอกอีเมล์" required>
+			    					<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control font-md-14" name="email" id="email" placeholder="กรอกอีเมล์" required>
 			  					</div>
 							</div>
 							<div class="col-12 mb-md-4">
 			  					<div class="form-group">
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">รหัสผ่าน</label>
-			    					<input type="password" class="form-control font-md-14" id="password" placeholder="กรอกรหัสผ่าน" required>
+			    					<input type="password" class="form-control font-md-14" name="password" id="password" placeholder="กรอกรหัสผ่าน" required>
 			  					</div>
 							</div>
 							<div class="col-6 pr-md-3">
@@ -51,7 +55,7 @@
 			  					<a class="btn btn-danger w-100" id="login">เข้าสู่ระบบ</a>
 							</div>
 							<div class="col-6 pl-md-3">
-			  					<a href="" class="btn btn-default w-100">ยกเลิก</a>
+			  					<a href="../index.php" class="btn btn-default w-100">ยกเลิก</a>
 							</div>
 						</div>
 						<input type="submit" id="submit" hidden>

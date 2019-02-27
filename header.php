@@ -2,11 +2,15 @@
 	include('./controller/query_category.php'); 
 
 	session_start();
+
+	if(!empty($_SESSION['token'])) {
+		echo $_SESSION['token'];
+	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Are Friend </title>
+	<title> E-commerce </title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
