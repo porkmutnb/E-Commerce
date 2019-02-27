@@ -17,7 +17,9 @@
     
     echo "Loading....<br>";
 
-    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."' AND 'status' = 'member'";
+    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."' AND `status` = 'member'";
+
+    echo $sql."<br>";
 
     if ($res = mysqli_query($conn, $sql)) { 
 	    if (mysqli_num_rows($res) > 0) {
