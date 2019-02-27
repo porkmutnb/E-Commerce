@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Are Friend </title>
+	<title> E-commerce </title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
