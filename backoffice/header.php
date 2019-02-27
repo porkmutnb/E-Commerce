@@ -44,15 +44,15 @@
 			<div class="row bg-shadow">
 				<div class="col-md-3 bg-backoffice border-aaa mh-100">
 					<div class="row">
-						<div class="col-12 py-md-2 block-main-menu" id="block-main-menu-1">
-							<a href="notification.php">
-								<i class="fas fa-bell fa-lg pl-md-1"></i>
-								แจ้งเตือน
-							</a>
-							<div class="icon-notification-backoffice">
-								2
-							</div>
-						</div>
+<!--						<div class="col-12 py-md-2 block-main-menu" id="block-main-menu-1">-->
+<!--							<a href="notification.php">-->
+<!--								<i class="fas fa-bell fa-lg pl-md-1"></i>-->
+<!--								แจ้งเตือน-->
+<!--							</a>-->
+<!--							<div class="icon-notification-backoffice">-->
+<!--								2-->
+<!--							</div>-->
+<!--						</div>-->
 						<div class="col-12 py-md-2 block-main-menu" id="block-main-menu-2">
 							<a href="orderinformation.php">
 								<i class="fas fa-shopping-cart fa-lg"></i>
