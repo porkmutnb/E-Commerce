@@ -90,7 +90,7 @@
 									if ($result->num_rows > 0) {
 										while($row = $result->fetch_assoc()) {
 											echo "<div class='col plr-md-0'>".
-												 "<a href='listmenu.php'>".
+												 "<a href='#' onclick='listMenu(".$row['categoryID'].")'>".
 												 $row['categoryName'].
 												 "</a>".
 												 "<div class='line-top-menu'>|</div>".
@@ -126,4 +126,9 @@
 			</div>
 		</div>
 		
+<script>
+	function listMenu(cateID) {
+		window.location.href = "./listmenu.php?categoryID="+cateID;
+	}
+</script>
 		

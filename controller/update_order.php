@@ -23,7 +23,15 @@
 
     $orderID = $_GET['orderID'];
 
-    echo $orderID;
+    $sqlupdate = "UPDATE tbl_order SET `status` = '0' WHERE orderID = '".$orderID."' AND userID = '".$user['userID']."'";
+    if (mysqli_query($conn, $sqlupdate) === TRUE) {
+        echo "Record updated successfully";
+        header('Location: ../profile.php');
+
+    } else {
+        echo "Error updating record: " . mysqli_error($conn);
+    }
+
 
     
 

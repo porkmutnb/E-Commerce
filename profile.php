@@ -111,7 +111,9 @@
 
 <script>
     function updateOrder(order) {
-        window.location.href = "./controller/update_order.php?orderID="+order;
+        if(confirm('Are you sure? delete this order')) {
+            window.location.href = "./controller/update_order.php?orderID="+order;
+        }
     }
 </script>
 
