@@ -37,8 +37,6 @@ $textArr = explode("|",$savetext);
                 }
             </style>
             
-            ".$savetext."
-            
             <div class=\"row mt-md-4 mx-md-0 body\">
                 <div class=\"col-md-8\">
                     <div>
