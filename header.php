@@ -3,9 +3,11 @@
 
 	session_start();
 
-	if(!empty($_SESSION['token'])) {
-		echo $_SESSION['token'];
-	}
+	include('./controller/query_profile.php'); 
+
+	// if(!empty($_SESSION['token'])) {
+	// 	echo $_SESSION['token'];
+	// }
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,8 +67,8 @@
 									}else{
 										?>
 											<div class="col">
-												<a href="logout.php" class="font-white">
-													ลงชื่อออก
+												<a href="profile.php" class="font-white">
+													<?php echo $user['username']; ?>
 												</a>
 											</div>
 										<?php
@@ -105,18 +107,20 @@
 								?>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
-							<div class="dropdown">
-								<a href="myorder.php" >
-									<div class="relative block-list-order">รายการที่สั่ง
-                                        <i class="fa fa-shopping-cart font-lg-24"></i>
-										<div class="noti-count">
-											3
+						<?php if(!empty($_SESSION['token'])) { ?>
+							<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
+								<div class="dropdown">
+									<a href="myorder.php" >
+										<div class="relative block-list-order">รายการที่สั่ง
+                        	                <i class="fa fa-shopping-cart font-lg-24"></i>
+											<div class="noti-count">
+												3
+											</div>
 										</div>
-									</div>
-								</a>
+									</a>
+								</div>
 							</div>
-						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
