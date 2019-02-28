@@ -8,6 +8,7 @@
 	}
 	if(!empty($_SESSION['basket'])) {
 		if(!empty($_GET)) {
+			$_SESSION['basket'] .= ",";
 			$check = explode(",", $_SESSION['basket']);
 			if (!in_array($id.":".$qty, $check)) {
 				$_SESSION['basket'] .= $id.":".$qty.",";
@@ -17,7 +18,7 @@
 		include('./controller/query_product_one.php');
 	}else{
 		if(!empty($_GET)) {
-			$_SESSION['basket'] .= $id.":".$qty.",";
+			$_SESSION['basket'] = $id.":".$qty.",";
 			$_SESSION['basket'] = substr($_SESSION['basket'], 0, strlen($_SESSION['basket'])-1);
 			include('./controller/query_product_one.php');
 		}
@@ -45,12 +46,12 @@
 										$Qty = 0;
 										for ($i=0; $i < count($array); $i++) { 
 											$e = explode(":", $array[$i]);
-											$totalQty += $e[1];
+											$totalQty += intval($e[1]);
 											if($e[0]==$row['productID']) {
 												$Qty = $e[1];
-												$totalPrice += ($e[1]*$row['price']);
+												$totalPrice += (intval($e[1])*$row['price']);
 											}else{
-												$totalPrice += ($e[1]*$row['price']);
+												$totalPrice += (intval($e[1])*$row['price']);
 											}
 										}
 										echo	"<div class='row'>";

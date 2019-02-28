@@ -1,4 +1,11 @@
-<?php include('header.php') ?>
+<?php 
+    include('header.php');
+
+    if(empty($_SESSION['basket'])) {
+        header('Location: ./home.php');
+    }
+    
+?>
 <form action="./controller/insert_order.php" method="POST"  enctype="multipart/form-data">
     <div class="container mh-100 bg-shadow bg-white pb-md-5">
         <div class="row mb-md-4 mb-lg-5 mb-3" align="center">
