@@ -109,20 +109,21 @@
 								?>
 							</div>
 						</div>
-						<?php if(!empty($_SESSION['token'])) { ?>
-							<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
-								<div class="dropdown">
-									<a href="myorder.php" >
-										<div class="relative block-list-order">รายการที่สั่ง
-                        	                <i class="fa fa-shopping-cart font-lg-24"></i>
+						<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
+							<div class="dropdown">
+								<a href="myorder.php" >
+									<div class="relative block-list-order">รายการที่สั่ง
+                                        <i class="fa fa-shopping-cart font-lg-24"></i>
+										<?php if(!empty($_SESSION["basket"])) { ?>
+											<?php $arr = explode(",", $_SESSION["basket"]); ?>
 											<div class="noti-count">
-												3
+												<?php echo count($arr); ?>
 											</div>
-										</div>
-									</a>
-								</div>
+										<?php } ?>
+									</div>
+								</a>
 							</div>
-						<?php } ?>
+						</div>
 					</div>
 				</div>
 			</div>

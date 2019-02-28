@@ -65,43 +65,47 @@
                             <th>สถานะ</th>
                             <th></th>
                         </tr>
-                        <tr>
-                            <?php
-                                if (mysqli_num_rows($order) > 0) {
-                                    while($row = $order->fetch_assoc()) {
-                                        if($row['status']>=3) {
-                                            $remark = "<td><a href='#'>เปิด</a></td>";
+                        <?php
+                            if (mysqli_num_rows($order) > 0) {
+                                while($row = $order->fetch_assoc()) {
+                                    if($row['status']>=3) {
+                                        $remark = "<td><a href='#'>เปิด</a></td>";
+                                    }else{
+                                        if($row['evidence']==null||$row['evidence']=="") {
+                                            $remark = "<td><a href='#' onclick='uploadEvidence(".$row['orderID'].")'>อัพโหลด</a></td>";
                                         }else{
                                             $remark = "<td><a href='#' onclick='updateOrder(".$row['orderID'].")'>ลบ</a></td>";
                                         }
-                                        switch ($row['status']) {
-                                            case 0:
-                                                $row['status'] = "ลบ";
-                                                break;
-                                            case 1:
-                                                $row['status'] = "รอดำเนินการ";
-                                                break;
-                                            case 2:
-                                                $row['status'] = "กำลังจัดส่ง";
-                                                break;
-                                            case 3:
-                                                $row['status'] = "เรียบร้อย";
-                                                break;
-                                        }
-                                        if($row['status']!="ลบ") {
-                                            echo "<td align='center'>".$row['orderID']."</td>";
-                                            echo "<td>".$row['productName']."</td>";
-                                            echo "<td>".$row['address']."</td>";
-                                            echo "<td align='center'>".$row['created_at']."</td>";
-                                            echo "<td align='center'>".$row['status']."</td>";
-                                            echo $remark;
-                                        }
                                     }
-                                }else{
-                                    echo "<td colspan='6' align='center'>ไม่มีข้อมูล</td>";
+                                    switch ($row['status']) {
+                                        case 0:
+                                            $row['status'] = "ลบ";
+                                            break;
+                                        case 1:
+                                            $row['status'] = "รอดำเนินการ";
+                                            break;
+                                        case 2:
+                                            $row['status'] = "กำลังจัดส่ง";
+                                            break;
+                                        case 3:
+                                            $row['status'] = "เรียบร้อย";
+                                            break;
+                                    }
+                                    if($row['status']!="ลบ") {
+                                        echo "<tr>";
+                                        echo "<td align='center'>".$row['orderID']."</td>";
+                                        echo "<td>".$row['productName']."</td>";
+                                        echo "<td>".$row['address']."</td>";
+                                        echo "<td align='center'>".$row['created_at']."</td>";
+                                        echo "<td align='center'>".$row['status']."</td>";
+                                        echo $remark;
+                                        echo "</tr>";
+                                    }
                                 }
-                            ?>
-                        </tr>
+                            }else{
+                                echo "<td colspan='6' align='center'>ไม่มีข้อมูล</td>";
+                            }
+                        ?>
                     </table>
                 </div>
             </div>
@@ -109,7 +113,34 @@
     </div>
 </div>
 
+<form action="./controller/upload_order.php" method="POST"  enctype="multipart/form-data">
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header relative border-none pt-md-4 pt-4 pb-md-4 pl-md-4 pr-md-4" align="center">
+                    <b class="font-weight-bold text-title">อัพโหลดหลักฐานการโอนเงิน</b>
+                    <div class="row mx-0">
+                        <div class="form-group w-100">
+                            <input type="hidden" name="id" id="id">
+                            <input type="file" multiple="true" id="customFile" name="customFile">
+                        </div>
+                        <div class="col-12 mt-md-2 mt-2 mb-md-2 mb-2">
+                            <button type="submit" class="btn btn-orange w-100">ยืนยัน</button>
+                        </div>
+                    </div>
+                    <a class="close absolute btn-close-modal" data-dismiss="modal"><i class="fas fa-times"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
 <script>
+    function uploadEvidence(order) {
+        document.getElementById('id').value = order;
+        $('#myModal').modal('show');
+    }
     function updateOrder(order) {
         if(confirm('Are you sure? delete this order')) {
             window.location.href = "./controller/update_order.php?orderID="+order;

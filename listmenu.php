@@ -13,18 +13,20 @@
 		</div>
 		<?php
 			if (mysqli_num_rows($product) > 0) {
+				$i = 1;
 				while($row = $product->fetch_assoc()) {
 					echo "<div class='col-md-4 col-sm-4 col-4 pr-md-2 pr-1 pl-md-3 pl-2 mb-2 mb-md-3'>";
-					echo "<div class='col block-product pl-0 pr-0 pointer' data-toggle='modal' data-target='#modalProduct'>";
-					echo "<div class='label-nameproduct w-100 font-lg-26 font-md-22 font-12 pt-md-2 pt-lg-2 pt-2 font-sm-16 pl-md-4 pl-2'>";
+					echo "<div class='col block-product pl-0 pr-0 pointer' onclick='showProductDetail(".$i.",".$row['productID'].")'>";
+					echo "<div class='label-nameproduct w-100 font-lg-26 font-md-22 font-12 pt-md-2 pt-lg-2 pt-2 font-sm-16 pl-md-4 pl-2' id='productName".$i."'>";
 					echo $row['productName'];
 					echo "</div>";
 					echo "<div class='label-priceproduct font-lg-22 font-md-18 font-sm-14 font-12 b-2 r-2'>";
-					echo $row['price']."<div class='inline font-lg-18 font-md-14 font-sm-12 font-10'>บาท.</div>";
+					echo "<p id='productPrice".$i."'>".$row['price']."</p>"."<div class='inline font-lg-18 font-md-14 font-sm-12 font-10'>บาท.</div>";
 					echo "</div>";
-					echo "<img src='".$row['image']."' class='w-100 h-100 fit-cover'>";
+					echo "<img src='".$row['image']."' class='w-100 h-100 fit-cover' id='productImage".$i."'>";
 					echo "</div>";
 					echo "</div>";
+					$i++;
 				}
 			}else{
 
