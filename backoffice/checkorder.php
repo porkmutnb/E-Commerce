@@ -16,34 +16,34 @@
             </div>
             <div class="row mt-md-4 mx-md-0">
                 <div class="col-md-2 offset-md-10">
-                    <a href="orderPDF.php" class="btn btn-primary w-100">print</a>
+                    <a onclick="printorder()" class="btn btn-primary text-white w-100">พิมพ์</a>
                 </div>
             </div>
             <div class="row mt-md-4 mx-md-0">
                 <div class="col-md-8">
                     <div>
                         <b>ชื่อผู้ใช้ : </b>
-                        <span>xxxxxx</span>
+                        <span id="username">xxxxxx</span>
                     </div>
                     <div>
                         <b>รายการสั่งซื้อ : </b>
-                        <span>xxxxxx</span>
+                        <span id="detail">xxxxxx</span>
                     </div>
                     <div>
                         <b>วันที่ : </b>
-                        <span>xxxxxx</span>
+                        <span id="date">xxxxxx</span>
                     </div>
                     <div>
                         <b>ที่อยู่จัดส่ง : </b>
-                        <span>xxxxxx</span>
+                        <span id="address">xxxxxx</span>
                     </div>
                     <div>
                         <b>เบอร์โทร : </b>
-                        <span>xxxxxx</span>
+                        <span id="phone">xxxxxx</span>
                     </div>
                     <div>
                         <b>ราคา : </b>
-                        <span>xxxxxx</span>
+                        <span id="price">xxxxxx</span>
                     </div>
                 </div>
                 <div class="col-md-4" align="center">
@@ -53,5 +53,11 @@
             </div>
         </div>
     </div>
+    <form action="orderPDF.php" method="post" target="_blank" id="formdata">
+        <input type="text" id="sendvalue" name="sendvalue" hidden>
+        <input type="submit" hidden>
+    </form>
+
+    <script src="../js/checkorder.js"></script>
 
 <?php include('footer.php') ?>

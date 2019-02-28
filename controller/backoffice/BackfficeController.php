@@ -114,6 +114,17 @@
 		echo json_encode(true);
 	}
 
+	if ($obj->name == "datauser"){
+		$stmt = $conn->prepare("SELECT * FROM tbl_user
+								INNER JOIN tbl_gender ON tbl_gender.genderID = tbl_user.genderID
+								");
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$outp = $result->fetch_all(MYSQLI_ASSOC);
+
+		echo json_encode($outp);
+	}
+
 
 
  ?>

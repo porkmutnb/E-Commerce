@@ -23,37 +23,41 @@
 							<th>E-mail</th>
 							<th>เพศ</th>
 							<th>เบอร์โทร</th>
-							<th>ที่อยู่</th>
 						</tr>
-						<tr class="tr">
-							<td align="center">1</td>
-                            <td>xxxxxxx</td>
-							<td>no.wuttichai@gmail.com</td>
-							<td align="center">หญิง</td>
-							<td align="center">0958888888</td>
-							<td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>
-						</tr>
-						<tr class="tr">
-							<td align="center">2</td>
-                            <td>xxxxxxx</td>
-							<td>no.wuttichai@gmail.com</td>
-							<td align="center">หญิง</td>
-							<td align="center">0958888888</td>
-							<td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>
-						</tr>
-						<tr class="tr">
-							<td align="center">3</td>
-                            <td>xxxxxxx</td>
-							<td>no.wuttichai@gmail.com</td>
-							<td align="center">ชาย</td>
-							<td align="center">0958888888</td>
-							<td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>
-						</tr>
+                        <tbody id="listuser">
+<!--                        <tr class="tr">-->
+<!--                            <td align="center">1</td>-->
+<!--                            <td>xxxxxxx</td>-->
+<!--                            <td>no.wuttichai@gmail.com</td>-->
+<!--                            <td align="center">หญิง</td>-->
+<!--                            <td align="center">0958888888</td>-->
+<!--                            <td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="tr">-->
+<!--                            <td align="center">2</td>-->
+<!--                            <td>xxxxxxx</td>-->
+<!--                            <td>no.wuttichai@gmail.com</td>-->
+<!--                            <td align="center">หญิง</td>-->
+<!--                            <td align="center">0958888888</td>-->
+<!--                            <td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="tr">-->
+<!--                            <td align="center">3</td>-->
+<!--                            <td>xxxxxxx</td>-->
+<!--                            <td>no.wuttichai@gmail.com</td>-->
+<!--                            <td align="center">ชาย</td>-->
+<!--                            <td align="center">0958888888</td>-->
+<!--                            <td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>-->
+<!--                        </tr>-->
+                        </tbody>
+
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
+
+    <script src="../js/datauser.js"></script>
 
 <?php include('footer.php') ?>
 
