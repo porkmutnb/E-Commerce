@@ -1,7 +1,18 @@
+<?php 
+	include('./controller/query_category.php'); 
+
+	session_start();
+
+	include('./controller/query_profile.php'); 
+
+	// if(!empty($_SESSION['token'])) {
+	// 	echo $_SESSION['token'];
+	// }
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Are Friend </title>
+	<title> E-commerce </title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -44,11 +55,25 @@
 										หน้าหลัก
 									</a>
 								</div>
-								<div class="col">
-									<a href="login.php" class="font-white">
-										เข้าสู่ระบบ
-									</a>
-								</div>
+								<?php  
+									if(empty($_SESSION['token'])) {
+										?>
+											<div class="col">
+												<a href="login.php" class="font-white">
+													เข้าสู่ระบบ
+												</a>
+											</div>
+										<?php
+									}else{
+										?>
+											<div class="col">
+												<a href="profile.php" class="font-white">
+													<?php echo $user['username']; ?>
+												</a>
+											</div>
+										<?php
+									}
+								?>
 							</div>
 						</div>
 					</div>
@@ -61,37 +86,41 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-5 col-7 block-top-menu font-lg-14 font-xs-12">
 							<div class="row" align="center">
-								<div class="col plr-md-0">
-									<a href="listmenu.php">
-                                        หญิง
-									</a>
-									<div class="line-top-menu">|</div>
-								</div>
-								<div class="col plr-md-0">
-									<a href="listmenu.php">
-                                        ชาย
-									</a>
-									<div class="line-top-menu">|</div>
-								</div>
-								<div class="col plr-md-0">
-									<a href="listmenu.php">
-										แฟชั่น
-									</a>
-								</div>
+								<?php
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											echo "<div class='col plr-md-0'>".
+												 "<a href='listmenu.php'>".
+												 $row['categoryName'].
+												 "</a>".
+												 "<div class='line-top-menu'>|</div>".
+												 "</div>";
+										}
+									}else{
+										echo 	"<div class='col plr-md-0'>".
+												"<a href='#'>".
+                                			    "ไม่มีข้อมูล".
+												"</a>".
+												"<div class='line-top-menu'>|</div>".
+												"</div>";
+									}
+								?>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
-							<div class="dropdown">
-								<a href="myorder.php" >
-									<div class="relative block-list-order">รายการที่สั่ง
-                                        <i class="fa fa-shopping-cart font-lg-24"></i>
-										<div class="noti-count">
-											3
+						<?php if(!empty($_SESSION['token'])) { ?>
+							<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
+								<div class="dropdown">
+									<a href="myorder.php" >
+										<div class="relative block-list-order">รายการที่สั่ง
+                        	                <i class="fa fa-shopping-cart font-lg-24"></i>
+											<div class="noti-count">
+												3
+											</div>
 										</div>
-									</div>
-								</a>
+									</a>
+								</div>
 							</div>
-						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
