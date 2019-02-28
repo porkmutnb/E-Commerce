@@ -27,7 +27,7 @@
 						</tr>
 						<tr class="tr">
 							<td align="center">1</td>
-                            <td align="center">ปปปปปปป</td>
+                            <td>xxxxxxx</td>
 							<td>no.wuttichai@gmail.com</td>
 							<td align="center">หญิง</td>
 							<td align="center">0958888888</td>
@@ -35,9 +35,17 @@
 						</tr>
 						<tr class="tr">
 							<td align="center">2</td>
-                            <td align="center">ปปปปปปป</td>
+                            <td>xxxxxxx</td>
 							<td>no.wuttichai@gmail.com</td>
 							<td align="center">หญิง</td>
+							<td align="center">0958888888</td>
+							<td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>
+						</tr>
+						<tr class="tr">
+							<td align="center">3</td>
+                            <td>xxxxxxx</td>
+							<td>no.wuttichai@gmail.com</td>
+							<td align="center">ชาย</td>
 							<td align="center">0958888888</td>
 							<td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>
 						</tr>
