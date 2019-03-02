@@ -4,20 +4,21 @@
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randstring = '';
-        for ($i = 0; $i < 30; $i++) {
-            $randstring .= $characters[rand(0, strlen($characters))];
+        for ($i = 0; $i <= 30; $i++) {
+            $randstring .= $characters[rand(0, strlen($characters))-1];
         }
         return $randstring;
     }
 
-    include('connectDB.php');
+    include('../connectDB.php');
 
     $email = $_POST["email"];
     $password = md5($_POST["password"]);
     
     echo "Loading....<br>";
+    echo RandomString();
 
-    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."' AND 'status' = 'admin'";
+    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."' AND `status` = 'admin'";
 
     if ($res = mysqli_query($conn, $sql)) { 
 	    if (mysqli_num_rows($res) > 0) {
@@ -31,10 +32,11 @@
 
                 session_start();
                 $_SESSION["token"] = $token;
-                header('Location: ../../backoffice/datauser.php');
+                header('Location: ../../backoffice/notification.php');
 
             } else {
                 echo "Error updating record: " . mysqli_error($conn);
+                header('Location: ../../backoffice/admin.php');
             }
         }else{
             echo "No Matching records are found."; 
@@ -44,3 +46,5 @@
         echo "ERROR: Could not able to execute $sql. ". mysqli_error($conn); 
         header('Location: ../../backoffice/admin.php');
     }
+
+    mysqli_close($conn);

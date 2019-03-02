@@ -1,6 +1,3 @@
-<?php 
-	session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +25,13 @@
 			<div class="container font-white">
 				<div class="row">
 					<div class="col">
-						<a href="#">
-							<img src="../public/image/logo-novembor-white.png" class="logo-banner">
+						<a href="#" class="font-lg-24 font-16">
+							<!-- <img src="../public/image/logo-novembor-white.png" class="logo-banner"> -->
+							Fashion Shop Backoffice
 						</a>
 					</div>
 					<div class="col pt-md-4" align="right">
-						<a id="btnLogout">ออกจากระบบ</a>
+						<a href="./logout.php">ออกจากระบบ</a>
 					</div>
 				</div>
 			</div>
@@ -49,9 +47,11 @@
 								<i class="fas fa-bell fa-lg pl-md-1"></i>
 								แจ้งเตือน
 							</a>
-							<div class="icon-notification-backoffice">
-								2
-							</div>
+							<?php if($neworder>0) { ?>
+								<div class="icon-notification-backoffice">
+									<?php echo $neworder; ?>
+								</div>
+							<?php } ?>
 						</div>
 						<div class="col-12 py-md-2 block-main-menu" id="block-main-menu-2">
 							<a href="orderinformation.php">

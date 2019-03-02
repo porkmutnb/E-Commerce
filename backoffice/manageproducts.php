@@ -1,4 +1,12 @@
-<?php include('header.php') ?>
+<?php
+
+	include('../controller/backoffice/checkadmin.php');
+
+	include('../controller/backoffice/query_order.php');
+
+	include('header.php');
+	
+?>
 
 	<style type="text/css">
 		#block-main-menu-3{
@@ -44,20 +52,39 @@
 						<tbody id="list-product">
 							
 						</tbody>
-						<!-- <tr class="tr">
-							<td align="center">2</td>
-							<td align="center">
-								<img src="../public/image/testFood.jpeg" class="border-1-ddd" width="100">
-							</td>
-							<td align="center">ข้าวผัดกระเพรา</td>
-							<td>- ข้าวผัดหมู <br>- น้ำอัดลม 1 ขวด</td>
-							<td align="center">ทานกลุ่ม</td>
-							<td align="center">239 บาท</td>
-							<td align="center">67 ครั้ง</td>
-							<td align="center">
-								<a href="productdetail.php"><u>ดูรายละเอียด</u></a>
-							</td>
-						</tr> -->
+							<?php
+								if (mysqli_num_rows($queryproduct) > 0) {
+									$i = 1;
+									while($row = mysqli_fetch_assoc($queryproduct)) {
+										echo "<tr class='tr'>";
+										echo "<td align='center'>".$i."</td>";
+										echo "<td align='center'>";
+											if(file_exists("../".$row['image'])==1) {
+												echo "<img src='../".$row['image']."' class='border-1-ddd' width='100'>";
+											}else{
+												echo "<img src='".$row['image']."' class='border-1-ddd' width='100'>";
+											}
+										echo "</td>";
+										echo "<td align='center'>".$row['productName']."</td>";
+										echo "<td>".$row['productDetail']."</td>";
+										echo "<td align='center'>".$row['categoryName']."</td>";
+										echo "<td align='center'>".$row['price']." บาท</td>";
+										echo "<td align='center'>";
+											include('../controller/backoffice/query_product_detail.php');
+											echo ($row['qualtity'] - $fetchproductdetail['totalQty']);
+										echo " ครั้ง</td>";
+										echo "<td align='center'>";
+										echo "<a href='./productdetail.php'><u>ดูรายละเอียด</u></a>";
+										echo "</td>";
+										echo "</tr>";
+										$i++;
+									}
+								}else{
+									echo "<tr class='tr'>";
+									echo "<td clospan='8' align='center'> ไม่มีข้อมูล </td>";
+									echo "</tr>";
+								}
+							?>
 					</table>
 				</div>
 			</div>
