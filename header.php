@@ -2,8 +2,10 @@
 	include('./controller/query_category.php'); 
 
 	session_start();
-
-	include('./controller/query_profile.php'); 
+	
+	if(!empty($_SESSION['token'])) {
+		include('./controller/query_profile.php'); 
+	}
 
 	// if(!empty($_SESSION['token'])) {
 	// 	echo $_SESSION['token'];
@@ -90,7 +92,7 @@
 									if ($result->num_rows > 0) {
 										while($row = $result->fetch_assoc()) {
 											echo "<div class='col plr-md-0'>".
-												 "<a href='listmenu.php'>".
+												 "<a href='#' onclick='listMenu(".$row['categoryID'].")'>".
 												 $row['categoryName'].
 												 "</a>".
 												 "<div class='line-top-menu'>|</div>".
@@ -107,23 +109,29 @@
 								?>
 							</div>
 						</div>
-						<?php if(!empty($_SESSION['token'])) { ?>
-							<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
-								<div class="dropdown">
-									<a href="myorder.php" >
-										<div class="relative block-list-order">รายการที่สั่ง
-                        	                <i class="fa fa-shopping-cart font-lg-24"></i>
+						<div class="col-md-4 col-sm-7 col-5 offset-md-4 block-top-menu" align="right">
+							<div class="dropdown">
+								<a href="myorder.php" >
+									<div class="relative block-list-order">รายการที่สั่ง
+                                        <i class="fa fa-shopping-cart font-lg-24"></i>
+										<?php if(!empty($_SESSION["basket"])) { ?>
+											<?php $arr = explode(",", $_SESSION["basket"]); ?>
 											<div class="noti-count">
-												3
+												<?php echo count($arr); ?>
 											</div>
-										</div>
-									</a>
-								</div>
+										<?php } ?>
+									</div>
+								</a>
 							</div>
-						<?php } ?>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		
+<script>
+	function listMenu(cateID) {
+		window.location.href = "./listmenu.php?categoryID="+cateID;
+	}
+</script>
 		
