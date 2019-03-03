@@ -20,6 +20,7 @@
 					echo "<div class='label-nameproduct w-100 font-lg-26 font-md-22 font-12 pt-md-2 pt-lg-2 pt-2 font-sm-16 pl-md-4 pl-2' id='productName".$i."'>";
 					echo $row['productName'];
 					echo "</div>";
+					echo "<div style='display:none;' id='productDetail".$i."'>".$row['productDetail']."</div>";
 					echo "<div class='label-priceproduct font-lg-22 font-md-18 font-sm-14 font-12 b-2 r-2'>";
 					echo "<p id='productPrice".$i."'>".$row['price']."</p>"."<div class='inline font-lg-18 font-md-14 font-sm-12 font-10'>บาท.</div>";
 					echo "</div>";
@@ -42,3 +43,19 @@
 </div>
 
 <?php include('footer.php') ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
