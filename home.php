@@ -50,6 +50,7 @@
 			<a href="myorder.php" class="btn btn-orange w-100" style="">รายการที่สั่งซื้อ</a>
 		</div>
 	</div>
+</div>
 <?php 
 	include('footer.php');
 ?>
