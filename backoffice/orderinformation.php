@@ -27,12 +27,14 @@
 					<table class="tbl-backoffice">
 						<tr>
 							<th>ลำดับ</th>
-							<th>E-mail</th>
+							<th>ชื่อผู้ใช้</th>
 							<th>รายการสั่งซื้อ</th>
-							<th>เวลา</th>
+							<th>วันที่</th>
 							<th>เบอร์โทร</th>
 							<th>ที่อยู่จัดส่ง</th>
 							<th>ราคา</th>
+                            <th>สถานะ</th>
+                            <th></th>
 						</tr>
 						<?php
 							if (mysqli_num_rows($queryorderinfo) > 0) {

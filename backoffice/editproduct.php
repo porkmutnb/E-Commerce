@@ -11,15 +11,15 @@
 		<div class="col">
 			<div class="row">
 				<div class="col text-title pb-md-3" align="center">
-					<b>แก้ไขเมนู</b>
+					<b>แก้ไขสินค้า</b>
 				</div>
 			</div>
 			<div class="row mx-md-0">
 				<div class="col bg-f0f0f0 py-md-3 mb-md-5">
 					<form action="../controller/backoffice/editproduct.php" method="POST" enctype="multipart/form-data">
 			  			<div class="form-group">
-			    			<label class="mb-sm-1 mb-0 font-md-14" for="">ชื่อเมนู</label>
-			    			<input type="text" class="form-control font-md-14" name="name" id="name" placeholder="กรอกชื่อเมนู">
+			    			<label class="mb-sm-1 mb-0 font-md-14" for="">ชื่อสินค้า</label>
+			    			<input type="text" class="form-control font-md-14" name="name" id="name" placeholder="กรอกชื่อสินค้า">
 			  			</div>
 			  			<div class="row">
 			  				<div class="col-6">
@@ -35,36 +35,36 @@
 			  			<div class="row">
 			  				<div class="col-6 pr-md-2">
 			  					<div class="form-group">
-			    					<label class="mb-sm-1 mb-0 font-md-14" for="">รายละเอียดเมนู</label>
-			    					<input type="text" class="form-control font-md-14 detail1" id="detail1" name="detail1" placeholder="รายละเอียดเมนู 1" required>
+			    					<label class="mb-sm-1 mb-0 font-md-14" for="">รายละเอียดสินค้า</label>
+			    					<input type="text" class="form-control font-md-14 detail1" id="detail1" name="detail1" placeholder="รายละเอียดสินค้า 1" required>
 			    				</div>
 			    			</div>
 			    		</div>
 			    		<div class="row">
 			  				<div class="col-6 pr-md-2">
 			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail2" name="detail2" placeholder="รายละเอียดเมนู 2">
+			    					<input type="text" class="form-control font-md-14" id="detail2" name="detail2" placeholder="รายละเอียดสินค้า 2">
 			    				</div>
 			    			</div>
 			    		</div>
 			    		<div class="row">
 			  				<div class="col-6 pr-md-2">
 			  					<div class="form-group">			    					
-			  						<input type="text" class="form-control font-md-14" id="detail3" name="detail3" placeholder="รายละเอียดเมนู 3">
+			  						<input type="text" class="form-control font-md-14" id="detail3" name="detail3" placeholder="รายละเอียดสินค้า 3">
 			    				</div>
 			    			</div>
 			    		</div>
 			    		<div class="row">
 			  				<div class="col-6 pr-md-2">
 			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail4" name="detail4" placeholder="รายละเอียดเมนู 4">
+			    					<input type="text" class="form-control font-md-14" id="detail4" name="detail4" placeholder="รายละเอียดสินค้า 4">
 			    				</div>
 			    			</div>
 			    		</div>
 			    		<div class="row">
 			  				<div class="col-6 pr-md-2">
 			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail5" name="detail5" placeholder="รายละเอียดเมนู 5">
+			    					<input type="text" class="form-control font-md-14" id="detail5" name="detail5" placeholder="รายละเอียดสินค้า 5">
 			    				</div>
 			    			</div>
 			    		</div>
@@ -73,23 +73,29 @@
 			    			<textarea class="form-control" rows="5" placeholder="กรอกรายละเอียด">- ผัดผักรวมมิตร</textarea>
 			  			</div> -->
 			  			<div class="row">
-			  				<div class="col-6 pr-md-2">
+			  				<div class="col-4 pr-md-2">
 			  					<div class="form-group">
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">หมวดหมู่</label>
 			    					<select id="cate" name="cate" class="form-control">
-			    						<option>----- เลือกหมวดหมู่  -----</option>
-			    						<option value="1">ทานเดี่ยว</option>
-			    						<option value="2">ทานคู่</option>
-			    						<option value="3">ทานกลุ่ม</option>
+                                        <option value=" " selected="selected" disabled>----- เลือกหมวดหมู่  -----</option>
+                                        <option value="1">สำหรับผู้หญิง</option>
+                                        <option value="2">สำหรับผู้ชาย</option>
+                                        <option value="3">สำหรับแฟชั่น</option>
 			    					</select>
 			  					</div>
 			  				</div>
-			  				<div class="col-6 pl-md-2">
+			  				<div class="col-4 pl-md-2 pr-md-2">
 			  					<div class="form-group">
 			  						<label class="mb-sm-1 mb-0 font-md-14" for="">ราคา (บาท)</label>
 			    					<input type="number" name="price" class="form-control font-md-14" id="price" placeholder="กรอกราคา">
 			  					</div>
 			  				</div>
+                            <div class="col-4 pl-md-2">
+                                <div class="form-group">
+                                    <label class="mb-sm-1 mb-0 font-md-14" for="">จำนวนสินค้า</label>
+                                    <input type="number" name="amount" class="form-control font-md-14" id="price" placeholder="กรอกจำนวนสินค้า">
+                                </div>
+                            </div>
 			  			</div>
 			  			<div class="row mt-md-5 mb-md-3">
 			  				<div class="col-3 offset-md-6">

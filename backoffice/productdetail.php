@@ -42,7 +42,7 @@
 				<div class="col">
 					<div class="row mx-md-0 bg-f0f0f0 py-md-3">
 						<div class="col-6">
-							<img src="" id="image" class="w-100">
+							<img src="../public/image/pd-1.jpeg" id="image" class="w-100">
 						</div>
 						<div class="col-6 pl-md-0">
 							<div class="pb-md-2">
@@ -52,18 +52,22 @@
 							<div class="pb-md-2">
 								<b>รายละเอียด</b>
 								<div class="pl-md-4" id="detail">
-									<!-- - ผัดผักรวมมิตร <br>
-									- นำ้โค้ก 1 ขวด -->
+									 - ผัดผักรวมมิตร <br>
+                                    - นำ้โค้ก 1 ขวด
 								</div>
 							</div>
 							<div class="pb-md-2">
 								<b>ประเภท : </b>
-								<div class="inline" id="type">ทานเดี่ยว</div>
+								<div class="inline" id="type">สำหรับผู้หญิง</div>
 							</div>
 							<div class="pb-md-2">
 								<b>ราคา : </b>
-								<div class="inline" id="price">59 บาท</div>
+								<div class="inline" id="price">199 บาท</div>
 							</div>
+                            <div class="pb-md-2">
+                                <b>คงเหลือ : </b>
+                                <div class="inline" id="amount">23 ชิ้น</div>
+                            </div>
 						</div>
 					</div>
 				</div>

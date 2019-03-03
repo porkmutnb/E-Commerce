@@ -2,7 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48daa0bd-8b25-4510-9589-2e88c479d45d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backoffice/checkorder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backoffice/orderPDF.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/E-Commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E-Commerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/backoffice/._addproduct.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/._datauser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/._editproduct.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/._header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/._manageproducts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/._orderinformation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/._productdetail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/addproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/addproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/datauser.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/datauser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/editproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/editproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/manageproducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/manageproducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/orderinformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/orderinformation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/productdetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/productdetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/connectDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/connectDB.php" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/backoffice/admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/datauser.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/datauser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backoffice/manageproducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/backoffice/manageproducts.php" afterDir="false" />
+=======
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
+>>>>>>> origin/develop_front
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,9 +40,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/backoffice/composer.json</pharConfigPath>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/backoffice/orderinformation.php">
+=======
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/backoffice/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="54" column="34" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="54" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backoffice/datauser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+=======
         <entry file="file://$PROJECT_DIR$/listmenu.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1155">
@@ -41,25 +92,30 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/footer.php">
+>>>>>>> origin/develop_front
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+            <state relative-caret-position="375">
+              <caret line="25" column="45" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backoffice/notification.php">
+        <entry file="file://$PROJECT_DIR$/backoffice/checkorder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <state relative-caret-position="270">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/connectDB.php">
+        <entry file="file://$PROJECT_DIR$/backoffice/orderPDF.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="180">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+=======
             <state relative-caret-position="75">
               <caret line="5" column="24" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="24" />
             </state>
@@ -81,15 +137,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backoffice/manageproducts.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="190">
+              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+=======
             <state relative-caret-position="555">
               <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
+>>>>>>> origin/develop_front
             </state>
           </provider>
         </entry>
@@ -110,12 +173,42 @@
         <option value="$PROJECT_DIR$/myorder.php" />
         <option value="$PROJECT_DIR$/payment.php" />
         <option value="$PROJECT_DIR$/header.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/backoffice/header.php" />
+        <option value="$PROJECT_DIR$/backoffice/datauser.php" />
+        <option value="$PROJECT_DIR$/backoffice/manageproducts.php" />
+=======
         <option value="$PROJECT_DIR$/footer.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/controller/connectDB.php" />
+        <option value="$PROJECT_DIR$/backoffice/addproduct.php" />
+        <option value="$PROJECT_DIR$/backoffice/manageproducts.php" />
+        <option value="$PROJECT_DIR$/backoffice/datauser.php" />
+        <option value="$PROJECT_DIR$/backoffice/productdetail.php" />
+        <option value="$PROJECT_DIR$/backoffice/editproduct.php" />
+        <option value="$PROJECT_DIR$/backoffice/orderinformation.php" />
+        <option value="$PROJECT_DIR$/backoffice/header.php" />
+        <option value="$PROJECT_DIR$/backoffice/checkorder.php" />
+        <option value="$PROJECT_DIR$/backoffice/vendor/autoload.php" />
+        <option value="$PROJECT_DIR$/backoffice/orderPDF.php" />
+=======
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
+>>>>>>> origin/develop_front
       </list>
     </option>
   </component>
   <component name="PhpServers">
     <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/backoffice/vendor/composer" />
+      <path value="$PROJECT_DIR$/backoffice/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/backoffice/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/backoffice/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/backoffice/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/backoffice/vendor/psr/log" />
+    </include_path>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
@@ -127,6 +220,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,18 +231,34 @@
             <path>
               <item name="E-Commerce" type="b2602c69:ProjectViewProjectNode" />
               <item name="E-Commerce" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+=======
+<<<<<<< HEAD
+              <item name="backoffice" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
+>>>>>>> origin/develop_front
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backoffice" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backoffice/vendor/mpdf" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -172,20 +282,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551192649481</updated>
+<<<<<<< HEAD
+      <workItem from="1551192650760" duration="4689000" />
+      <workItem from="1551283921326" duration="646000" />
+=======
       <workItem from="1551192650760" duration="4943000" />
       <workItem from="1551268614580" duration="772000" />
+<<<<<<< HEAD
+      <workItem from="1551274593215" duration="1473000" />
+      <workItem from="1551276413613" duration="1785000" />
+      <workItem from="1551278254079" duration="1767000" />
+      <workItem from="1551280074138" duration="1832000" />
+      <workItem from="1551281969321" duration="1066000" />
+=======
       <workItem from="1551274593215" duration="95000" />
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
+>>>>>>> origin/develop_front
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="13638000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="5337000" />
+=======
     <option name="totallyTimeSpent" value="5810000" />
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
+>>>>>>> origin/develop_front
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="813" extended-state="0" />
-    <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
+=======
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2746781" />
+=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
+>>>>>>> origin/develop_front
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -196,9 +334,18 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+=======
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.43411928" />
+=======
+>>>>>>> a382437ee2b222d47f5bac00fb2357043aa9ba99
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.20527045" />
+>>>>>>> origin/develop_front
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -248,31 +395,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/listmenu.php">
+    <entry file="file://$PROJECT_DIR$/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myorder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="73" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
+        <state relative-caret-position="75">
+          <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/payment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="630">
           <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
+    <entry file="file://$PROJECT_DIR$/myorder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+        <state relative-caret-position="630">
+          <caret line="107" column="73" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/listmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -283,18 +430,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/connectDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/query_gender.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/query_category.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/login.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -303,10 +450,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/connectDB.php">
+    <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="555">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/._admin.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/._addproduct.php" />
+    <entry file="file://$PROJECT_DIR$/backoffice/admin.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/manageproducts.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/datauser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/productdetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/addproduct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="93" column="94" selection-start-line="93" selection-start-column="83" selection-end-line="93" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/editproduct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="92" column="53" lean-forward="true" selection-start-line="92" selection-start-column="53" selection-end-line="92" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/manageproducts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="938">
+          <caret line="65" column="50" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/mpdf/test.php" />
+    <entry file="file://$PROJECT_DIR$/backoffice/vendor/psr/log/Psr/Log/Test/TestLogger.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php" />
+    <entry file="file://$PROJECT_DIR$/backoffice/vendor/autoload.php" />
+    <entry file="file://$PROJECT_DIR$/backoffice/orderinformation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/checkorder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/orderPDF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/orderinformation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="54" column="34" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="54" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/datauser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/manageproducts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
         </state>
       </provider>
     </entry>
