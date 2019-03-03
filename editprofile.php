@@ -26,7 +26,7 @@
                             <input type="text" class="form-control font-md-14" id="" placeholder="กรอกชื่อผู้ใช้" value="<?php echo $user['username']; ?>" name="username" required>
                         </div>
                         <div class="form-group">
-                            <label class="mb-sm-1 mb-0 font-md-14">อีเมล?</label>
+                            <label class="mb-sm-1 mb-0 font-md-14">อีเมล์</label>
                             <input type="text" class="form-control font-md-14" id="" placeholder="กรอกอีเมล์" value="<?php echo $user['email']; ?>" name="email" required>
                         </div>
                         <div class="form-group">
@@ -44,14 +44,14 @@
                                                 if ($row['genderID']==$user['genderID']) {
                                                     echo	"<div class='col'>".
 	    						    					"<label class='label-radio font-lg-16'>".$row["genderName"].
-	    						    					"<input type='radio' value='".$row["genderID"]."' name='gender' checked required>".
+	    						    					"<input type='radio' value='".$row["genderID"]."' name='gender' checked style='margin-left:5px;' required>".
 	    						    					"<span class='checkmark'></span>".
 	    						    					"</label>".
 	    						    					"</div>";
                                                 }else {
                                                     echo	"<div class='col'>".
 	    						    					"<label class='label-radio font-lg-16'>".$row["genderName"].
-	    						    					"<input type='radio' value='".$row["genderID"]."' name='gender' required>".
+	    						    					"<input type='radio' value='".$row["genderID"]."' name='gender' style='margin-left:5px;' required>".
 	    						    					"<span class='checkmark'></span>".
 	    						    					"</label>".
 	    						    					"</div>";

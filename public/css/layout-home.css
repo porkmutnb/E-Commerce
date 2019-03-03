@@ -46,6 +46,7 @@
 	}
 	.block-product{
 		height: 200px;
+		border: 2px solid #000;
 	}
 	.pt-md-30{
 		padding-top: 30px;

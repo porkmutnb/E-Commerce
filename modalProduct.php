@@ -29,7 +29,7 @@
 	        							</div>
 	        						</div>
 	        					</div>
-	        					<div class="col font-weight-bold font-lg-24"  align="right">
+	        					<div class="col font-weight-bold font-lg-24" align="right">
 	        						<span id="productPrice">199</span> บาท
 	        					</div>
 	        				</div>
@@ -51,6 +51,7 @@
 	</div>
 
 	<script>
+		
 		let productOneID;
 		let productOnePrice;
 		function showProductDetail(index, productID) {
@@ -58,6 +59,7 @@
 			var productDetail = document.getElementById('productDetail'+index).innerHTML;
 			var productPrice = document.getElementById('productPrice'+index).innerHTML;
 			var productImage = document.getElementById('productImage'+index).src;
+			console.log(productImage, "55555");
 			productOnePrice = productPrice;
 			productOneID = productID;
 			document.getElementById('pdn1').textContent = productName;
@@ -65,7 +67,7 @@
 			document.getElementById('productDetail').innerHTML = productDetail;
 			document.getElementById('productPrice').innerHTML = productPrice;
 			document.getElementById('productImage').src = productImage;
-			$('#modalProduct').modal('show')
+			$('#modalProduct').modal('show');
 			console.log(index, " ",productID, " ", productName, " ", productPrice, " ", productImage);
 		}
 		function increment() {

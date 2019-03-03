@@ -176,6 +176,7 @@
 	.block-product{
 		overflow: hidden;
 		height: 500px;
+		border: 2px solid #000;
 	}
 	.block-product-spacial{
 		overflow: hidden;

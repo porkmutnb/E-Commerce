@@ -42,7 +42,7 @@
                 <div class="col-md-3">
                     <a href="./editprofile.php" class="btn btn-default w-100">แก้ไขข้อมูลส่วนตัว</a>
 
-                    <a href="./logout.php" class="btn btn-default w-100">ลงชื่อออก</a>
+                    <a href="./logout.php" class="btn btn-default w-100 mt-3">ลงชื่อออก</a>
                 </div>
             </div>
         </div>
@@ -64,17 +64,20 @@
                             <th>วันที่</th>
                             <th>สถานะ</th>
                             <th></th>
+                            <th></th>
                         </tr>
                         <?php
                             if (mysqli_num_rows($order) > 0) {
+                                $i = 1;
+                                $savetext = array();
                                 while($row = $order->fetch_assoc()) {
                                     if($row['status']>=3) {
                                         $remark = "<td><a href='#'>เปิด</a></td>";
                                     }else{
                                         if($row['evidence']==null||$row['evidence']=="") {
-                                            $remark = "<td><a href='#' onclick='uploadEvidence(".$row['orderID'].")'>อัพโหลด</a></td>";
+                                            $remark = "<td align='center'><a href='#' onclick='uploadEvidence(".$row['orderID'].")'>อัพโหลด</a></td>";
                                         }else{
-                                            $remark = "<td><a href='#' onclick='updateOrder(".$row['orderID'].")'>ลบ</a></td>";
+                                            $remark = "<td align='center'><a href='#' onclick='updateOrder(".$row['orderID'].")'>ลบ</a></td>";
                                         }
                                     }
                                     switch ($row['status']) {
@@ -93,25 +96,36 @@
                                     }
                                     if($row['status']!="ลบ") {
                                         echo "<tr>";
-                                        echo "<td align='center'>".$row['orderID']."</td>";
+                                        // echo "<td align='center'>".$row['orderID']."</td>";
+                                        echo "<td align='center'>".$i."</td>";
                                         echo "<td>".$row['productName']."</td>";
                                         echo "<td>".$row['address']."</td>";
                                         echo "<td align='center'>".$row['created_at']."</td>";
                                         echo "<td align='center'>".$row['status']."</td>";
                                         echo $remark;
+                                        echo "<td align='center'><a class='pointer' onclick='printorder(".($i-1).")'>พิมพ์</a></td>";
                                         echo "</tr>";
                                     }
+                                    array_push($savetext, $user['username']."|".$row['productName']."|".$row['created_at']."|".$row['address']."|".$row['price']);
+
+                                    echo "<input type='text' class='w-100' value='".$savetext[$i-1]."' name='' id='savetext".($i-1)."' hidden>";
+
+                                    $i++;
                                 }
                             }else{
                                 echo "<td colspan='6' align='center'>ไม่มีข้อมูล</td>";
                             }
                         ?>
                     </table>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+<form id="sendtopdf" method="POST" target="_bank" action="printorder.php">
+    <input type="text" name="value" id="inputtext" hidden>
+</form>
 
 <form action="./controller/upload_order.php" method="POST"  enctype="multipart/form-data">
     <div class="modal fade" id="myModal">
@@ -145,6 +159,13 @@
         if(confirm('Are you sure? delete this order')) {
             window.location.href = "./controller/update_order.php?orderID="+order;
         }
+    }
+    function printorder(index) {
+        
+        $('#inputtext').val($('#savetext'+index+'').val());
+        console.log($('#inputtext').val());
+
+        $('#sendtopdf').submit();
     }
 </script>
 
