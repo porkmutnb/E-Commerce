@@ -1,4 +1,12 @@
-<?php include('header.php') ?>
+<?php
+
+	include('../controller/backoffice/checkadmin.php');
+
+	include('../controller/backoffice/query_order.php');
+
+	include('header.php');
+	
+?>
 
 	<style type="text/css">
 		#block-main-menu-3{
@@ -36,34 +44,7 @@
 			  				<div class="col-6 pr-md-2">
 			  					<div class="form-group">
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">รายละเอียดสินค้า</label>
-			    					<input type="text" class="form-control font-md-14" id="detail1" name="detail1" placeholder="รายละเอียดสินค้า 1" required>
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail2" name="detail2" placeholder="รายละเอียดสินค้า 2">
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">			    					<input type="text" class="form-control font-md-14" id="detail3" name="detail3" placeholder="รายละเอียดสินค้า 3">
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail4" name="detail4" placeholder="รายละเอียดสินค้า 4">
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail5" name="detail5" placeholder="รายละเอียดสินค้า 5">
+									<textarea class="form-control font-md-14" rows="5" name="detail" placeholder="รายละเอียดสินค้า" style="resize: none;"></textarea>
 			    				</div>
 			    			</div>
 			    		</div>
@@ -76,10 +57,14 @@
 			  					<div class="form-group">
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">หมวดหมู่</label>
 			    					<select class="form-control" id="cate" name="cate">
-			    						<option value=" " selected="selected" disabled>----- เลือกหมวดหมู่  -----</option>
-			    						<option value="1">สำหรับผู้หญิง</option>
-			    						<option value="2">สำหรับผู้ชาย</option>
-			    						<option value="3">สำหรับแฟชั่น</option>
+										<option value=" " selected="selected" disabled>----- เลือกหมวดหมู่  -----</option>
+										<?php
+											if ($querycategory->num_rows > 0) {
+												while($row = $querycategory->fetch_assoc()) {
+													echo "<option value='".$row['categoryID']."'>".$row['categoryName']."</option>";
+												}
+											}
+										?>
 			    					</select>
 			  					</div>
 			  				</div>
@@ -92,7 +77,7 @@
                             <div class="col-4 pl-md-2">
                                 <div class="form-group">
                                     <label class="mb-sm-1 mb-0 font-md-14" for=""> จำนวนสินค้า</label>
-                                    <input type="number" class="form-control font-md-14" id="amount" name="price" placeholder="กรอกจำนวนสินค้า" required>
+                                    <input type="number" class="form-control font-md-14" id="amount" name="qualtity" placeholder="กรอกจำนวนสินค้า" required>
                                 </div>
                             </div>
 			  			</div>

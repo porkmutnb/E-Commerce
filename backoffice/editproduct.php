@@ -1,4 +1,20 @@
-<?php include('header.php') ?>
+<?php
+
+	include('../controller/backoffice/checkadmin.php');
+
+	include('../controller/backoffice/query_order.php');
+
+	if(empty($_GET)) {
+		header('Location: ./manageproducts.php');
+	}
+
+	$id = $_GET['id'];
+
+	include('../controller/backoffice/query_product.php');
+
+	include('header.php');
+	
+?>
 
 	<style type="text/css">
 		#block-main-menu-3{
@@ -19,14 +35,20 @@
 					<form action="../controller/backoffice/editproduct.php" method="POST" enctype="multipart/form-data">
 			  			<div class="form-group">
 			    			<label class="mb-sm-1 mb-0 font-md-14" for="">ชื่อสินค้า</label>
-			    			<input type="text" class="form-control font-md-14" name="name" id="name" placeholder="กรอกชื่อสินค้า">
+			    			<input type="text" class="form-control font-md-14" name="name" id="name" value="<?php echo $fetchproduct['productName']; ?>" placeholder="กรอกชื่อสินค้า">
 			  			</div>
 			  			<div class="row">
 			  				<div class="col-6">
 			  					<div class="form-group">
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">อัพโหลดรูปภาพ</label>
 			    					<a id="actionUpload">
-			    						<img src="../public/image/testFood.jpeg" id="output" class="w-100 border-1-ddd">
+										<?php
+											if (file_exists("../".$fetchproduct['image'])) {
+												?> <img src="../<?php echo $fetchproduct['image']; ?>" id="output" class="w-100 border-1-ddd"> <?php
+											}else {
+												?> <img src="<?php echo $fetchproduct['image']; ?>" id="output" class="w-100 border-1-ddd"> <?php
+											}
+										?>
 			    					</a>
 			    					<input type="file" name="file" id="inputFile" accept="image/*" onchange="loadFile(event)" hidden>
 			  					</div>
@@ -36,35 +58,7 @@
 			  				<div class="col-6 pr-md-2">
 			  					<div class="form-group">
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">รายละเอียดสินค้า</label>
-			    					<input type="text" class="form-control font-md-14 detail1" id="detail1" name="detail1" placeholder="รายละเอียดสินค้า 1" required>
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail2" name="detail2" placeholder="รายละเอียดสินค้า 2">
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">			    					
-			  						<input type="text" class="form-control font-md-14" id="detail3" name="detail3" placeholder="รายละเอียดสินค้า 3">
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail4" name="detail4" placeholder="รายละเอียดสินค้า 4">
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="row">
-			  				<div class="col-6 pr-md-2">
-			  					<div class="form-group">
-			    					<input type="text" class="form-control font-md-14" id="detail5" name="detail5" placeholder="รายละเอียดสินค้า 5">
+									<textarea class="form-control font-md-14" rows="5" name="detail" placeholder="รายละเอียดสินค้า" style="resize: none;"><?php echo $fetchproduct['productDetail']; ?></textarea>
 			    				</div>
 			    			</div>
 			    		</div>
@@ -78,22 +72,36 @@
 			    					<label class="mb-sm-1 mb-0 font-md-14" for="">หมวดหมู่</label>
 			    					<select id="cate" name="cate" class="form-control">
                                         <option value=" " selected="selected" disabled>----- เลือกหมวดหมู่  -----</option>
-                                        <option value="1">สำหรับผู้หญิง</option>
-                                        <option value="2">สำหรับผู้ชาย</option>
-                                        <option value="3">สำหรับแฟชั่น</option>
+                                        <?php
+											if ($querycategory->num_rows > 0) {
+												while($row = $querycategory->fetch_assoc()) {
+													if ($row['categoryID']==$fetchproduct['categoryID']) {
+														echo "<option value='".$row['categoryID']."' selected='selected'>".$row['categoryName']."</option>";
+													}else {
+														echo "<option value='".$row['categoryID']."'>".$row['categoryName']."</option>";
+													}
+												}
+											}
+										?>
 			    					</select>
 			  					</div>
 			  				</div>
 			  				<div class="col-4 pl-md-2 pr-md-2">
 			  					<div class="form-group">
 			  						<label class="mb-sm-1 mb-0 font-md-14" for="">ราคา (บาท)</label>
-			    					<input type="number" name="price" class="form-control font-md-14" id="price" placeholder="กรอกราคา">
+			    					<input type="number" name="price" class="form-control font-md-14" id="price" value="<?php echo $fetchproduct['price']; ?>" placeholder="กรอกราคา" disabled>
 			  					</div>
 			  				</div>
                             <div class="col-4 pl-md-2">
                                 <div class="form-group">
                                     <label class="mb-sm-1 mb-0 font-md-14" for="">จำนวนสินค้า</label>
-                                    <input type="number" name="amount" class="form-control font-md-14" id="price" placeholder="กรอกจำนวนสินค้า">
+									<?php 
+										if($fetchproductorder['qualtity']=="") {
+											?> <input type="number" name="amount" class="form-control font-md-14" id="price" value="<?php echo $fetchproduct['qualtity']; ?>" placeholder="กรอกจำนวนสินค้า"> <?php
+										}else{
+											?> <input type="number" name="amount" class="form-control font-md-14" id="price" value="<?php echo ($fetchproduct['qualtity'] - $fetchproductorder['qualtity']); ?>" placeholder="กรอกจำนวนสินค้า"> <?php
+										}
+									?>
                                 </div>
                             </div>
 			  			</div>
@@ -105,14 +113,14 @@
 								</a>
 			  				</div>
 			  				<div class="col-3">
-								<a href="#" class="btn btn-secondary text-white w-100 px-md-0">
+								<a href="./productdetail.php?id=<?php echo $id; ?>" class="btn btn-secondary text-white w-100 px-md-0">
 									ยกเลิก
 								</a>
 			  				</div>
 			  			</div>
 			  			<input type="" id="updateDetail" name="updateDetail" value="0" hidden>
 			  			<input type="" name="statusImage" id="statusImage" hidden>
-			  			<input type="" name="id" id="id" hidden>
+			  			<input type="" name="id" id="id" value="<?php echo $id; ?>" hidden>
 			  			<input type="submit" id="submit" hidden>
 			  		</form>
 				</div>

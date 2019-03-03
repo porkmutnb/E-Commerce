@@ -72,9 +72,9 @@
 										echo "<td align='center'>";
 											include('../controller/backoffice/query_product_detail.php');
 											echo ($row['qualtity'] - $fetchproductdetail['totalQty']);
-										echo " ครั้ง</td>";
+										echo " ชิ้น</td>";
 										echo "<td align='center'>";
-										echo "<a href='./productdetail.php'><u>ดูรายละเอียด</u></a>";
+										echo "<a href='./productdetail.php?id=".$row['productID']."'><u>ดูรายละเอียด</u></a>";
 										echo "</td>";
 										echo "</tr>";
 										$i++;
