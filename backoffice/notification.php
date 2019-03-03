@@ -1,4 +1,12 @@
-<?php include('header.php') ?>
+<?php
+
+	include('../controller/backoffice/checkadmin.php');
+
+	include('../controller/backoffice/query_order.php');
+
+	include('header.php');
+	
+?>
 
 	<style type="text/css">
 		#block-main-menu-1{
@@ -15,54 +23,47 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 pb-md-2">
-					<a href="#">
-						<div class="block-new-notification relative">
-							<b>มีการสั่งอาหาร 3 รายการ</b>
-							<div class="text-secondary font-lg-14 pt-md-1">
-								เบอร์โทร : 0988888888
-							</div>
-							<div class="text-secondary font-lg-14 pt-md-1">
-								จัดส่งที่ : สุขสวัสดิ์ 39 อำเภอ พระประแดง, ตำบล บางพึ่ง, สมุทรปราการ
-							</div>
-							<div class="label-time-notification">
-								1 นาที
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-12 pb-md-2">
-					<a href="#">
-						<div class="block-new-notification relative">
-							<b>มีการสั่งอาหาร 1 รายการ</b>
-							<div class="text-secondary font-lg-14 pt-md-1">
-								เบอร์โทร : 0988888888
-							</div>
-							<div class="text-secondary font-lg-14 pt-md-1">
-								จัดส่งที่ : สุขสวัสดิ์ 39 อำเภอ พระประแดง, ตำบล บางพึ่ง, สมุทรปราการ
-							</div>
-							<div class="label-time-notification">
-								2 นาที
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-12 pb-md-2">
-					<a href="#">
-						<div class="block-default-notification relative">
-							<b>มีการสั่งอาหาร 7 รายการ</b>
-							<div class="text-secondary font-lg-14 pt-md-1">
-								เบอร์โทร : 0988888888
-							</div>
-							<div class="text-secondary font-lg-14 pt-md-1">
-								จัดส่งที่ : สุขสวัสดิ์ 39 อำเภอ พระประแดง, ตำบล บางพึ่ง, สมุทรปราการ
-							</div>
-							<div class="label-time-notification">
-								7 นาที
-							</div>
-						</div>
-					</a>
-				</div>
+				<?php
+					if (mysqli_num_rows($queryorder) > 0) {
+						while($row = mysqli_fetch_assoc($queryorder)) {
+							if ($row['notification']==1) {
+								echo "<div class='col-12 pb-md-2'>";
+								echo "<a href='#''>";
+								echo "<div class='block-new-notification relative'>";
+								echo "<b>ใหม่ มีการสั่งออเดอร์ ".$row['orderDetail']." รายการ</b>";
+								echo "<div class='text-secondary font-lg-14 pt-md-1'>";
+								echo "เบอร์โทร : ".$row['telephone']."";
+								echo "</div>";
+								echo "<div class='text-secondary font-lg-14 pt-md-1'>";
+								echo $row['address'];
+								echo "</div>";
+								echo "<div class='label-time-notification'>";
+								echo $row['created_at'];
+								echo "</div>";
+								echo "</div>";
+								echo "</a>";
+								echo "</div>";
+							}else {
+								echo "<div class='col-12 pb-md-2'>";
+								echo "<a href='#''>";
+								echo "<div class='block-default-notification relative'>";
+								echo "<b>มีการสั่งออเดอร์ ".$row['orderDetail']." รายการ</b>";
+								echo "<div class='text-secondary font-lg-14 pt-md-1'>";
+								echo "เบอร์โทร : ".$row['telephone']."";
+								echo "</div>";
+								echo "<div class='text-secondary font-lg-14 pt-md-1'>";
+								echo $row['address'];
+								echo "</div>";
+								echo "<div class='label-time-notification'>";
+								echo $row['created_at'];
+								echo "</div>";
+								echo "</div>";
+								echo "</a>";
+								echo "</div>";
+							}
+						}
+					}
+				?>
 			</div>
 		</div>
 	</div>

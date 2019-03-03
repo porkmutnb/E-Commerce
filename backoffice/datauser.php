@@ -1,4 +1,12 @@
-<?php include('header.php') ?>
+<?php
+
+	include('../controller/backoffice/checkadmin.php');
+
+	include('../controller/backoffice/query_order.php');
+
+	include('header.php');
+	
+?>
 
 	<style type="text/css">
 		#block-main-menu-4{
@@ -22,35 +30,36 @@
                             <th>ชื่อผู้ใช้</th>
 							<th>E-mail</th>
 							<th>เพศ</th>
+							<!-- <th>อายุ</th> -->
 							<th>เบอร์โทร</th>
+							<!-- <th>ที่อยู่</th> -->
+							<th>การสั่งซื้อ</th>
 						</tr>
-                        <tbody id="listuser">
-<!--                        <tr class="tr">-->
-<!--                            <td align="center">1</td>-->
-<!--                            <td>xxxxxxx</td>-->
-<!--                            <td>no.wuttichai@gmail.com</td>-->
-<!--                            <td align="center">หญิง</td>-->
-<!--                            <td align="center">0958888888</td>-->
-<!--                            <td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="tr">-->
-<!--                            <td align="center">2</td>-->
-<!--                            <td>xxxxxxx</td>-->
-<!--                            <td>no.wuttichai@gmail.com</td>-->
-<!--                            <td align="center">หญิง</td>-->
-<!--                            <td align="center">0958888888</td>-->
-<!--                            <td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="tr">-->
-<!--                            <td align="center">3</td>-->
-<!--                            <td>xxxxxxx</td>-->
-<!--                            <td>no.wuttichai@gmail.com</td>-->
-<!--                            <td align="center">ชาย</td>-->
-<!--                            <td align="center">0958888888</td>-->
-<!--                            <td>247 Suk Sawat 60 เขต ทุ่งครุ, แขวง บางมด</td>-->
-<!--                        </tr>-->
-                        </tbody>
-
+						<?php
+							if (mysqli_num_rows($queryuser) > 0) {
+								$i = 1;
+								while($row = mysqli_fetch_assoc($queryuser)) {
+									echo "<tr class='tr'>";
+									echo "<td align='center'>".$i."</td>";
+									echo "<td>".$row['email']."</td>";
+									echo "<td align='center'>".$row['genderName']."</td>";
+									// echo "<td align='center'></td>";
+									echo "<td align='center'>".$row['telephone']."</td>";
+									// echo "<td></td>";
+									echo "<td align='center'>";
+										include('../controller/backoffice/query_user_detail.php');
+										if (mysqli_num_rows($queryuserdetail) > 0) {
+											$total = 0;
+											while($row = mysqli_fetch_assoc($queryuserdetail)) {
+												$total += ($row['qualtity']*$row['price']);
+											}
+										}
+									echo $total." บาท</td>";
+									echo "</tr>";
+									$i++;
+								}
+							}
+						?>
 					</table>
 				</div>
 			</div>

@@ -27,7 +27,7 @@
 			  	if (this.readyState == 4 && this.status == 200) {
 			    	var obj = JSON.parse(xmlhttp.responseText);
 			    	if (obj == "true") {
-			    		location.href = "notification.php";
+			    		location.href = "admin.php";
 			    	}
 			    	else if (obj == "password fail") {
 			    		alert("รหัสผ่านไม่ถูกต้อง");

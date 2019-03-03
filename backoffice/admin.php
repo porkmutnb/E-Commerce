@@ -1,10 +1,7 @@
-<?php
-	include('../controller/backoffice/query_admin.php'); 
-?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>  </title>
+	<title> E-commerce Backoffice </title>
 	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
@@ -52,13 +49,13 @@
 							</div>
 							<div class="col-6 pr-md-3">
 			  					<!-- <a href="notification.php" class="btn btn-danger w-100">เข้าสู่ระบบ</a> -->
-			  					<a class="btn btn-danger w-100" id="login">เข้าสู่ระบบ</a>
+			  					<!-- <a class="btn btn-danger w-100" id="login">เข้าสู่ระบบ</a> -->
+								<input type="submit" class="btn btn-danger w-100" id="submit" value="เข้าสู่ระบบ">
 							</div>
 							<div class="col-6 pl-md-3">
 			  					<a href="../index.php" class="btn btn-default w-100">ยกเลิก</a>
 							</div>
 						</div>
-						<input type="submit" id="submit" hidden>
 					</form>
 				</div>
 			</div>
