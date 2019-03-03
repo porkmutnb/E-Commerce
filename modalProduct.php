@@ -29,7 +29,7 @@
 	        							</div>
 	        						</div>
 	        					</div>
-	        					<div class="col font-weight-bold font-lg-24"  align="right">
+	        					<div class="col font-weight-bold font-lg-24" align="right">
 	        						<span id="productPrice">199</span> บาท
 	        					</div>
 	        				</div>
