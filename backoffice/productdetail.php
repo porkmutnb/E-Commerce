@@ -1,4 +1,20 @@
-<?php include('header.php') ?>
+<?php
+
+	include('../controller/backoffice/checkadmin.php');
+
+	include('../controller/backoffice/query_order.php');
+
+	if(empty($_GET)) {
+		header('Location: ./manageproducts.php');
+	}
+
+	$id = $_GET['id'];
+
+	include('../controller/backoffice/query_product.php');
+
+	include('header.php');
+	
+?>
 
 	<style type="text/css">
 		#block-main-menu-3{
@@ -18,13 +34,13 @@
 				<div class="col-6 offset-md-6 align-self-end" align="right">
 					<div class="row">
 						<div class="col-4 pr-md-2">
-							<a href="addproduct.php" class="btn btn-primary text-white w-100 px-md-0">
+							<a href="./addproduct.php" class="btn btn-primary text-white w-100 px-md-0">
 								<i class="fas fa-plus-circle fa-md"></i>
 								เพิ่มเมนู
 							</a>
 						</div>
 						<div class="col-4 px-md-2">
-							<a href="editproduct.php" id="btnEdit" class="btn btn-secondary text-white w-100 px-md-0">
+							<a href="./editproduct.php?id=<?php echo $id; ?>" id="btnEdit" class="btn btn-secondary text-white w-100 px-md-0">
 								<i class='fas fa-pen'></i>
 								แก้ไข
 							</a>
@@ -42,31 +58,44 @@
 				<div class="col">
 					<div class="row mx-md-0 bg-f0f0f0 py-md-3">
 						<div class="col-6">
-							<img src="../public/image/pd-1.jpeg" id="image" class="w-100">
+							<?php
+								if (file_exists("../".$fetchproduct['image'])) {
+									?> <img src="../<?php echo $fetchproduct['image']; ?>" id="image" class="w-100"> <?php
+								}else {
+									?> <img src="<?php echo $fetchproduct['image']; ?>" id="image" class="w-100"> <?php
+								}
+							?>
 						</div>
 						<div class="col-6 pl-md-0">
 							<div class="pb-md-2">
 								<b>ชื่อเมนู : </b>
-								<div class="inline" id="name">ผัดผักรวมมิตร</div>
+								<div class="inline" id="name"><?php echo $fetchproduct['productName']; ?></div>
 							</div>
 							<div class="pb-md-2">
 								<b>รายละเอียด</b>
 								<div class="pl-md-4" id="detail">
-									 - ผัดผักรวมมิตร <br>
-                                    - นำ้โค้ก 1 ขวด
+									<?php echo $fetchproduct['productDetail']; ?>
 								</div>
 							</div>
 							<div class="pb-md-2">
 								<b>ประเภท : </b>
-								<div class="inline" id="type">สำหรับผู้หญิง</div>
+								<div class="inline" id="type"><?php echo $fetchproduct['categoryName']; ?></div>
 							</div>
 							<div class="pb-md-2">
 								<b>ราคา : </b>
-								<div class="inline" id="price">199 บาท</div>
+								<div class="inline" id="price"><?php echo $fetchproduct['price']; ?> บาท</div>
 							</div>
                             <div class="pb-md-2">
                                 <b>คงเหลือ : </b>
-                                <div class="inline" id="amount">23 ชิ้น</div>
+                                <div class="inline" id="amount">
+									<?php 
+										if($fetchproductorder['qualtity']=="") {
+											echo ($fetchproduct['qualtity']);
+										}else{
+											echo ($fetchproduct['qualtity'] - $fetchproductorder['qualtity']); 
+										}
+									?>
+								ชิ้น</div>
                             </div>
 						</div>
 					</div>
@@ -89,7 +118,7 @@
 	        			<div class="col">
 	        				<div class="row mt-md-4 mb-md-0">
 	        					<div class="col-6 pr-md-2">
-	        						<a id="deletePruduct" class="btn btn-danger w-100">ลบ</a>
+	        						<a class="btn btn-danger w-100" onclick="deleteProduct(<?php echo $id; ?>)">ลบ</a>
 	        					</div>
 	        					<div class="col-6 pl-md-2">
 	        						<a href="#" class="btn btn-default w-100" data-dismiss="modal">ยกเลิก</a>
@@ -104,6 +133,11 @@
 	    </div>
 	</div>
 	<script type="text/javascript" src="../js/productdetail.js"></script>
+	<script>
+		function deleteProduct(pid) {
+			window.location.href = "../controller/backoffice/deleteproduct.php?id="+pid;
+		}
+	</script>
 
 <?php include('footer.php') ?>
 

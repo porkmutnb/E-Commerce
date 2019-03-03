@@ -27,7 +27,6 @@
 					<table class="tbl-backoffice">
 						<tr>
 							<th>ลำดับ</th>
-                            <th>ชื่อผู้ใช้</th>
 							<th>E-mail</th>
 							<th>เพศ</th>
 							<!-- <th>อายุ</th> -->
