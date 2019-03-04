@@ -99,7 +99,12 @@
                                         echo "<tr>";
                                         // echo "<td align='center'>".$row['orderID']."</td>";
                                         echo "<td align='center'>".$i."</td>";
-                                        echo "<td>".$row['productName']."</td>";
+                                        echo "<td>";
+                                            include('./controller/query_order_detail.php');
+                                            while($row2 = $orderdetail->fetch_assoc()) {
+                                                echo "<li>".$row2['productName']."</li>";
+                                            }
+                                        echo "</td>";
                                         echo "<td>".$row['address']."</td>";
                                         echo "<td align='center'>".$row['created_at']."</td>";
                                         echo "<td align='center'>".$row['status']."</td>";
@@ -107,7 +112,7 @@
                                         echo "<td align='center'><a class='pointer' onclick='printorder(".($i-1).")'>พิมพ์</a></td>";
                                         echo "</tr>";
                                     }
-                                    array_push($savetext, $user['username']."|".$row['productName']."|".$row['created_at']."|".$row['address']."|".$row['price']);
+                                    array_push($savetext, $user['username']."|".$row['orderID']."|".$row['created_at']."|".$row['address']);
 
                                     echo "<input type='text' class='w-100' value='".$savetext[$i-1]."' name='' id='savetext".($i-1)."' hidden>";
 
