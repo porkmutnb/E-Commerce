@@ -24,7 +24,8 @@
         
             switch ($type) {
                 case 'verify':
-                    $sqlupdateorder = "UPDATE `tbl_order` SET `notification` = 0, `status` = 2 WHERE `orderID` = ".$oid;
+                    //$sqlupdateorder = "UPDATE `tbl_order` SET `notification` = 0, `status` = 2 WHERE `orderID` = ".$oid;
+                    $sqlupdateorder = "UPDATE `tbl_order` SET `status` = 2 WHERE `orderID` = ".$oid;
                     break;
                 case 'deliverly':
                     $sqlupdateorder = "UPDATE `tbl_order` SET `status` = 3 WHERE `orderID` = ".$oid;
