@@ -42,17 +42,17 @@
 			<div class="row bg-shadow">
 				<div class="col-md-3 bg-backoffice border-aaa mh-100">
 					<div class="row">
-						<div class="col-12 py-md-2 block-main-menu" id="block-main-menu-1">
+						<!-- <div class="col-12 py-md-2 block-main-menu" id="block-main-menu-1">
 							<a href="notification.php">
 								<i class="fas fa-bell fa-lg pl-md-1"></i>
 								แจ้งเตือน
 							</a>
-							<?php if($neworder>0) { ?>
-								<div class="icon-notification-backoffice">
-									<?php echo $neworder; ?>
-								</div>
-							<?php } ?>
-						</div>
+							<?php  ?>
+								<div class="icon-notification-backoffice" if($neworder>0) {> echo $neworder;
+									<?php  ?>
+								</div }>
+							<?php  ?>
+						</div> -->
 						<div class="col-12 py-md-2 block-main-menu" id="block-main-menu-2">
 							<a href="orderinformation.php">
 								<i class="fas fa-shopping-cart fa-lg"></i>
