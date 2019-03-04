@@ -27,8 +27,9 @@ include('header.php');
                     <?php
                     $savetext = $_POST['value'];
                     $textArr = explode("|",$savetext);
-
-                    echo "<img class='w-100' src='../".$textArr[1]."'>";
+                    if($textArr[1]!=""||$textArr[1]!=null) {
+                        echo "<img class='w-100' src='../".$textArr[1]."'>";
+                    }
                     ?>
                 </div>
                 <div class="col-md-8">
