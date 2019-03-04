@@ -18,7 +18,7 @@
 
     if ( mysqli_query($conn, $sql) === TRUE ) {
         echo "Record updated successfully";
-        header('Location: ../editprofile.php');
+        header('Location: ../profile.php');
 
     } else {
         echo "Error updating record: " . mysqli_error($conn);

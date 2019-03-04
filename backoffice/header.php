@@ -25,8 +25,7 @@
 			<div class="container font-white">
 				<div class="row">
 					<div class="col">
-						<a href="#" class="font-lg-24 font-16">
-							<!-- <img src="../public/image/logo-novembor-white.png" class="logo-banner"> -->
+						<a href="#" class="font-lg-24 font-16 pt-md-5">
 							Fashion Shop Backoffice
 						</a>
 					</div>
@@ -40,7 +39,7 @@
 
 		<div class="container">
 			<div class="row bg-shadow">
-				<div class="col-md-3 bg-backoffice border-aaa mh-100">
+				<div class="col-md-2 bg-backoffice border-aaa mh-100">
 					<div class="row">
 						<div class="col-12 py-md-2 block-main-menu" id="block-main-menu-1">
 							<a href="notification.php">
@@ -73,7 +72,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-9 bg-white pt-md-4">
+				<div class="col-md-10 bg-white pt-md-4">
 			
 			<!-- content -->
 				

@@ -86,23 +86,27 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<table class="tbl-backoffice">
+					<table class="tbl-backoffice mb-5">
 						<tr>
-							<th>ลำดับ</th>
+							<th>ที่</th>
 							<th>ชื่อผู้ใช้</th>
 							<th>รายการสั่งซื้อ</th>
 							<th>วันที่</th>
-							<th>เบอร์โทร</th>
+<!--							<th>เบอร์โทร</th>-->
 							<th>ที่อยู่จัดส่ง</th>
 							<th>ราคา</th>
 							<th>หลักฐานการโอน</th>
                             <th>สถานะ</th>
                             <th></th>
+                            <th></th>
 						</tr>
 						<?php
 							if (mysqli_num_rows($queryorderinfo) > 0) {
 								$i = 1;
+                                $savetext = array();
+
 								while($row = mysqli_fetch_assoc($queryorderinfo)) {
+                                    $detail = "";
 									echo "<tr class='tr'>";
 									echo "<td align='center'>".$i."</td>";
 									echo "<td>".$row['email']."</td>";
@@ -115,24 +119,25 @@
 												if($totalAll==0) {
 													$totalAll = ($rowdetail['totalPrice']*$rowdetail['totalQty']);
 												}
+                                                $detail = $detail." ".$rowdetail['productName'];
 											}
 										}
 									echo "</td>";
 									echo "<td align='center'>".$row['created_at']."</td>";
-									echo "<td align='center'>".$row['telephone']."</td>";
+//									echo "<td align='center'>".$row['telephone']."</td>";
 									echo "<td>".$row['address']."</td>";
 									echo "<td align='center'>".$totalAll."</td>";
-									echo "<td>";
+									echo "<td align='center'>";
 									if($row['evidence']!=null||$row['evidence']!="") {
 										echo "<img src='../".$row['evidence']."' class='border-1-ddd' width='100'>";
 										if($row['status']<3) {
-											echo "<a href='#' onclick='slipReturn(".$row['orderID'].")'>ตีกลับ</a>";
+											echo "<div><a href='#' onclick='slipReturn(".$row['orderID'].")'>ตีกลับ</a></div>";
 										}
 									}else{
 										echo "ยังไม่มีหลักฐาน";
 									}
 									echo "</td>";
-									echo "<td>";
+									echo "<td align='center'>";
 										switch ($row['status']) {
                                     	    case 0:
                                     	        $print = "ลบ";
@@ -157,7 +162,13 @@
 										echo	"</label>";
 									}
 									echo "</td>";
+									echo "<td align='center'><a onclick='viewdetail(".($i-1).")' class='btn btn-default'>ดู</a></td>";
 									echo "</tr>";
+
+                                    array_push($savetext, $row['email']."|".$row['evidence']."|".$detail."|".$row['created_at']."|".$row['address']."|".$totalAll);
+
+                                    echo "<input type='text' class='w-100' value='".$savetext[$i-1]."' name='' id='savetext".($i-1)."' hidden>";
+
 									$i++;
 								}
 							} else {
@@ -172,6 +183,9 @@
 			</div>
 		</div>
 	</div>
+    <form id="formdetail" method="POST" target="_bank" action="orderdetail.php">
+        <input type="text" name="value" id="inputtext" hidden>
+    </form>
 
 	<script>
 		function changeStatus(oid, status) {
@@ -193,6 +207,12 @@
 				window.location.href = "../controller/backoffice/return _slip_order.php?id="+oid;
 			}
 		}
+        function viewdetail(index) {
+            $('#inputtext').val($('#savetext'+index+'').val());
+            console.log($('#inputtext').val());
+
+            $('#formdetail').submit();
+        }
 	</script>
 
 <?php include('footer.php') ?>
