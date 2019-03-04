@@ -17,7 +17,7 @@
     
     echo "Loading....<br>";
 
-    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."' AND `status` = 'member'";
+    $sql = "SELECT * FROM `tbl_user` WHERE `email` = '".$email."' AND `password` = '".$password."'";
 
     echo $sql."<br>";
 
@@ -33,8 +33,12 @@
 
                 session_start();
                 $_SESSION["token"] = $token;
-                header('Location: ../home.php');
-
+                if($row['status']=="admin") {
+                    header('Location: ../backoffice/orderinformation.php');
+                }else{
+                    header('Location: ../home.php');
+                }
+                
             } else {
                 echo "Error updating record: " . mysqli_error($conn);
             }
