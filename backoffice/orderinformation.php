@@ -112,21 +112,16 @@
 									echo "<td>".$row['email']."</td>";
 									echo "<td>";
 										include('../controller/backoffice/query_order_detail.php');
-										$totalAll = 0;
-										if (mysqli_num_rows($queryorderdetail) > 0) {
-											while($rowdetail = mysqli_fetch_assoc($queryorderdetail)) {
-												echo "<div>".$rowdetail['productName']."</div>";
-												if($totalAll==0) {
-													$totalAll = ($rowdetail['totalPrice']*$rowdetail['totalQty']);
-												}
-                                                $detail = $detail." ".$rowdetail['productName'];
+										if (mysqli_num_rows($queryorderdetail2) > 0) {
+											while($rowdetail2 = mysqli_fetch_assoc($queryorderdetail2)) {
+												echo "<li>".$rowdetail2['productName']."</li>";
 											}
 										}
 									echo "</td>";
 									echo "<td align='center'>".$row['created_at']."</td>";
 //									echo "<td align='center'>".$row['telephone']."</td>";
 									echo "<td>".$row['address']."</td>";
-									echo "<td align='center'>".$totalAll."</td>";
+									echo "<td align='center'>".($data['totalPrice'] * $data['totalQty'])."</td>";
 									echo "<td align='center'>";
 									if($row['evidence']!=null||$row['evidence']!="") {
 										echo "<img src='../".$row['evidence']."' class='border-1-ddd' width='100'>";
@@ -165,9 +160,9 @@
 									echo "<td align='center'><a onclick='viewdetail(".($i-1).")' class='btn btn-default'>ดู</a></td>";
 									echo "</tr>";
 
-                                    array_push($savetext, $row['email']."|".$row['evidence']."|".$detail."|".$row['created_at']."|".$row['address']."|".$totalAll);
+                  array_push($savetext, $row['email']."|".$row['evidence']."|".$detail."|".$row['created_at']."|".$row['address']."|".($data['totalPrice'] * $data['totalQty']));
 
-                                    echo "<input type='text' class='w-100' value='".$savetext[$i-1]."' name='' id='savetext".($i-1)."' hidden>";
+                  echo "<input type='text' class='w-100' value='".$savetext[$i-1]."' name='' id='savetext".($i-1)."' hidden>";
 
 									$i++;
 								}
