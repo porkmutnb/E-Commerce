@@ -72,7 +72,8 @@
                                 $savetext = array();
                                 while($row = $order->fetch_assoc()) {
                                     if($row['status']>=3) {
-                                        $remark = "<td><a href='#'>เปิด</a></td>";
+//                                        $remark = "<td><a href='#'>เปิด</a></td>";
+                                        $remark = "<td align='center'><a href='#'></a>-</td>";
                                     }else{
                                         if($row['evidence']==null||$row['evidence']=="") {
                                             $remark = "<td align='center'><a href='#' onclick='uploadEvidence(".$row['orderID'].")'>อัพโหลด</a></td>";
