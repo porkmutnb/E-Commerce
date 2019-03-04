@@ -113,7 +113,7 @@
                                     $i++;
                                 }
                             }else{
-                                echo "<td colspan='6' align='center'>ไม่มีข้อมูล</td>";
+                                echo "<td colspan='7' align='center'>ไม่มีข้อมูล</td>";
                             }
                         ?>
                     </table>
