@@ -109,7 +109,7 @@
                                         echo "<td align='center'>".$row['created_at']."</td>";
                                         echo "<td align='center'>".$row['status']."</td>";
                                         echo $remark;
-                                        echo "<td align='center'><a class='pointer' onclick='printorder(".($i-1).")'>พิมพ์</a></td>";
+                                        echo "<td align='center'><a class='pointer' onclick='printorder(".($i-1).",".$row['orderID'].")'>พิมพ์</a></td>";
                                         echo "</tr>";
                                     }
                                     array_push($savetext, $user['username']."|".$row['orderID']."|".$row['created_at']."|".$row['address']);
@@ -166,9 +166,9 @@
             window.location.href = "./controller/update_order.php?orderID="+order;
         }
     }
-    function printorder(index) {
-        
-        $('#inputtext').val($('#savetext'+index+'').val());
+    function printorder(index, id) {
+        console.log(id, "id");
+        $('#inputtext').val(id);
         console.log($('#inputtext').val());
 
         $('#sendtopdf').submit();
